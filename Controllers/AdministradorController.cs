@@ -123,7 +123,7 @@ namespace MaxService_1.Controllers
         //---
         //LISTADO DE Marcas de LLantas _______________________________________________
         public IActionResult MarcaLlanta(){
-            var marca_llanta = _context.DataMarcaLlanta.OrderBy(v => v.MarcaLlantaId).ToList();
+            var marca_llanta = _context.DataMarcaLlanta.OrderBy(mll => mll.MarcaLlantaId).ToList();
             return View(marca_llanta);
         }
 
@@ -167,6 +167,58 @@ namespace MaxService_1.Controllers
             _context.Remove(marca_llanta);
             _context.SaveChanges();
             return RedirectToAction("MarcaLlanta");
+        }
+
+
+        //---
+        //LISTADO DE MEDIDAS de las LLantas _______________________________________________
+        public IActionResult MedidaLlanta(){
+            var medida_llanta = _context.DataMedidaLlanta.OrderBy(mell => mell.MedidaLlantaId).ToList();
+            return View(medida_llanta);
+        }
+
+        //REGISTRO DE MEDIDA DE LLANTA ____________________________________________________
+        public IActionResult RegistrarMedidaLlanta(){
+            return View();
+        }
+        
+        [HttpPost]
+        public IActionResult RegistrarMedidaLlanta(MedidaLlanta mell){
+            if(ModelState.IsValid){
+                _context.Add(mell);
+                _context.SaveChanges();
+                return RedirectToAction("MedidaLlanta");
+            }
+            return View(mell);
+        }
+
+        //MODIFICACION DE MEDIDA de la LLANTA _________________________________________________________________________
+        public IActionResult ModificarMedidaLlanta(int id) {
+            var medida_llanta = _context.DataMedidaLlanta.Find(id);
+            return View(medida_llanta);
+        }
+
+        [HttpPost]
+        public IActionResult ModificarMedidaLlanta(MedidaLlanta mell) {
+            if (ModelState.IsValid) {
+                var medida_llanta = _context.DataMedidaLlanta.Find(mell.MedidaLlantaId);
+                medida_llanta.Ancho = mell.Ancho;
+                medida_llanta.Diametro = mell.Diametro;
+                medida_llanta.Perfil = mell.Perfil;
+                _context.SaveChanges();
+                return RedirectToAction("MedidaLlanta");
+            }
+            return View(mell);
+        }
+
+
+        //ELIMINACION DE MARCA DE LLANTA ______________________________________________________
+        [HttpPost]
+        public IActionResult EliminarMedidaLlanta(int id) {
+            var medida_llanta = _context.DataMedidaLlanta.Find(id);
+            _context.Remove(medida_llanta);
+            _context.SaveChanges();
+            return RedirectToAction("MedidaLlanta");
         }
 
     }
