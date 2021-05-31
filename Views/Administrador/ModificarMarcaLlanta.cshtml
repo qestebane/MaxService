@@ -1,0 +1,14 @@
+@model MaxService_1.Models.MarcaLlanta
+
+<h1>Editar Marca de Llanta</h1>
+
+<form action="" method="post">
+    <input type="hidden" asp-for="MarcaLlantaId" />
+
+    <div class="form-group">
+        <label asp-for="NombreMarca">Marca</label>
+        <input asp-for="NombreMarca" class="form-control" >
+    </div>
+
+    <button class="btn btn-primary">Editar</button>
+</form>

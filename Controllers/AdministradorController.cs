@@ -66,7 +66,7 @@ namespace MaxService_1.Controllers
             return RedirectToAction("MarcaVehiculo");
         }
 
-
+        //---
         //LISTADO DE VEHICULOS_______________________________________________
         public IActionResult Vehiculo(){
             var vehiculo = _context.DataVehiculo.OrderBy(v => v.VehiculoId).ToList();
@@ -118,5 +118,56 @@ namespace MaxService_1.Controllers
             _context.SaveChanges();
             return RedirectToAction("Vehiculo");
         }
+
+
+        //---
+        //LISTADO DE Marcas de LLantas _______________________________________________
+        public IActionResult MarcaLlanta(){
+            var marca_llanta = _context.DataMarcaLlanta.OrderBy(v => v.MarcaLlantaId).ToList();
+            return View(marca_llanta);
+        }
+
+        //REGISTRO DE MARCA DE LLANTA ____________________________________________________
+        public IActionResult RegistrarMarcaLlanta(){
+            return View();
+        }
+        
+        [HttpPost]
+        public IActionResult RegistrarMarcaLlanta(MarcaLlanta mll){
+            if(ModelState.IsValid){
+                _context.Add(mll);
+                _context.SaveChanges();
+                return RedirectToAction("MarcaLlanta");
+            }
+            return View(mll);
+        }
+
+        //MODIFICACION DE MARCA de LLANTA _________________________________________________________________________
+        public IActionResult ModificarMarcaLlanta(int id) {
+            var marca_llanta = _context.DataMarcaLlanta.Find(id);
+            return View(marca_llanta);
+        }
+
+        [HttpPost]
+        public IActionResult ModificarMarcaLlanta(MarcaLlanta mll) {
+            if (ModelState.IsValid) {
+                var marca_llanta = _context.DataMarcaLlanta.Find(mll.MarcaLlantaId);
+                marca_llanta.NombreMarca = mll.NombreMarca;
+                _context.SaveChanges();
+                return RedirectToAction("MarcaLlanta");
+            }
+            return View(mll);
+        }
+
+
+        //ELIMINACION DE MARCA DE LLANTA ______________________________________________________
+        [HttpPost]
+        public IActionResult EliminarMarcaLlanta(int id) {
+            var marca_llanta = _context.DataMarcaLlanta.Find(id);
+            _context.Remove(marca_llanta);
+            _context.SaveChanges();
+            return RedirectToAction("MarcaLlanta");
+        }
+
     }
 }
