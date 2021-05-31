@@ -1,3 +1,4 @@
+using System;
 using System.Linq;
 using MaxService_1.Models;
 using MaxService_1.Models.Producto;
@@ -221,5 +222,73 @@ namespace MaxService_1.Controllers
             return RedirectToAction("MedidaLlanta");
         }
 
+
+
+        //---
+        //LISTADO DE DETALLES de las LLantas _______________________________________________
+        public IActionResult DetalleLlanta(){
+            var detalle_llanta = _context.DataDetalleLlanta.OrderBy(dll => dll.DetalleLlantaId).ToList();
+            return View(detalle_llanta);
+        }
+
+        //REGISTRO DE DETALLE DE LLANTA ____________________________________________________
+        public IActionResult RegistrarDetalleLlanta(){
+            ViewBag.Ancho = _context.DataMedidaLlanta.ToList().Select(mell => new SelectListItem("Ancho: "+ mell.Ancho.ToString()+ ",  Diametro: " +mell.Diametro.ToString()+",  Perfil: "+mell.Perfil.ToString(), mell.MedidaLlantaId.ToString()));
+            ViewBag.MLL = _context.DataMarcaLlanta.ToList().Select(mll => new SelectListItem(mll.NombreMarca, mll.MarcaLlantaId.ToString()));
+            return View();
+        }
+        
+
+        [HttpPost]
+        public IActionResult RegistrarDetalleLlanta(DetalleLlanta dll){
+           // Console.WriteLine(dll.MedidaLlantaId);
+
+            if(ModelState.IsValid){
+                _context.Add(dll);
+                _context.SaveChanges();
+                return RedirectToAction("DetalleLlanta");
+            }
+            return View(dll);
+        }
+
+        //MODIFICACION DE DETALLE de la LLANTA _________________________________________________________________________
+        public IActionResult ModificarDetalleLlanta(int id) {
+            var detalle_llanta = _context.DataDetalleLlanta.Find(id);
+            ViewBag.Ancho = _context.DataMedidaLlanta.ToList().Select(mell => new SelectListItem("Ancho: "+ mell.Ancho.ToString()+ ",  Diametro: " +mell.Diametro.ToString()+",  Perfil: "+mell.Perfil.ToString(), mell.MedidaLlantaId.ToString()));
+            ViewBag.MLL = _context.DataMarcaLlanta.ToList().Select(mll => new SelectListItem(mll.NombreMarca, mll.MarcaLlantaId.ToString()));
+            return View(detalle_llanta);
+        }
+
+        [HttpPost]
+        public IActionResult ModificarDetalleLlanta(DetalleLlanta dll) {
+            if (ModelState.IsValid) {
+                var detalle_llanta = _context.DataDetalleLlanta.Find(dll.DetalleLlantaId);
+                detalle_llanta.IndiceCarga = dll.IndiceCarga;
+                detalle_llanta.IndiceVelocidad = dll.IndiceVelocidad;
+                detalle_llanta.IndiceVelocidad = dll.IndiceVelocidad;
+                detalle_llanta.FotoLlanta = dll.FotoLlanta;
+                detalle_llanta.Construccion = dll.Construccion;
+                detalle_llanta.PresionMaxima = dll.PresionMaxima;
+                detalle_llanta.LimiteCarga = dll.LimiteCarga;
+                detalle_llanta.Clasificacion = dll.Clasificacion;
+                detalle_llanta.CodigoUTQG = dll.CodigoUTQG;
+                detalle_llanta.FechaFabricacion = dll.FechaFabricacion;
+                detalle_llanta.MedidaLlantaId = dll.MedidaLlantaId;
+                detalle_llanta.MarcaLlantaId = dll.MarcaLlantaId;
+                _context.SaveChanges();
+                return RedirectToAction("DetalleLlanta");
+            }
+            return View(dll);
+        }
+
+
+        //ELIMINACION DE DETALLE DE LLANTA ______________________________________________________
+        [HttpPost]
+        public IActionResult EliminarDetalleLlanta(int id) {
+            var detalle_llanta = _context.DataDetalleLlanta.Find(id);
+            _context.Remove(detalle_llanta);
+            _context.SaveChanges();
+            return RedirectToAction("DetalleLlanta");
+        }
     }
 }
