@@ -1,0 +1,39 @@
+@model List<MaxService_1.Models.MarcaVehiculo>
+
+<div class="text-center container row-1 my-4">
+    <h1 class="text-white" style="margin-bottom: 5%;">Lista de Marcas</h1>
+</div>
+
+<table class="text-center table">
+    <tr>
+        <th>Id</th>
+        <th>Nombre de la marca</th>
+        <th>Modelo</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.MarcaVehiculoId</td>
+            <td>@item.NombreMarca</td>
+            <td>@item.Modelo</td>
+
+            <td>
+                <a href="/Administrador/ModificarMarcaVehiculo/@item.MarcaVehiculoId" class="btn btn-secondary"> <img src="/img/logos/logoEditar.png" width="25px"> </a>
+                <form action="/Administrador/EliminarMarcaVehiculo" method="post" class="d-inline-block">
+                    <input type="hidden" name="id" value="@item.MarcaVehiculoId" />
+                    <button class="btn btn-secondary"><img src="/img/logos/logoBorrar.png" width="25px"></button>
+                </form>
+            </td>
+        </tr>
+    }
+    @if (Model.Count == 0) {
+        <tr>
+            <td colspan="12" class="text-center">
+                <h3 style="color: blue;" class="m-5"> Upps... Parece que no tenemos marcas</h3>
+            </td>
+        </tr>
+    }
+</table>
+
+<a href="/Administrador/RegistrarMarcaVehiculo" class="btn btn-primary">Añadir Marca Nueva</a>
+  
