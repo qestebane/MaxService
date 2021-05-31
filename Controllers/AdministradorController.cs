@@ -290,5 +290,63 @@ namespace MaxService_1.Controllers
             _context.SaveChanges();
             return RedirectToAction("DetalleLlanta");
         }
+
+
+        //---
+        //LISTADO DE LLantas _______________________________________________
+        public IActionResult Llanta(){
+            var llanta = _context.DataLlanta.OrderBy(ll => ll.DetalleLlantaId).ToList();
+            return View(llanta);
+        }
+
+        //REGISTRO DE LLANTA ____________________________________________________
+        public IActionResult RegistrarLlanta(){
+            ViewBag.DLL = _context.DataDetalleLlanta.ToList().Select(dll => new SelectListItem(dll.FotoLlanta, dll.DetalleLlantaId.ToString()));
+            ViewBag.V = _context.DataVehiculo.ToList().Select(v => new SelectListItem(v.TipoVehiculo, v.VehiculoId.ToString()));
+            return View();
+        }
+        
+
+        [HttpPost]
+        public IActionResult RegistrarLlanta(Llanta ll){
+            if(ModelState.IsValid){
+                _context.Add(ll);
+                _context.SaveChanges();
+                return RedirectToAction("Llanta");
+            }
+            return View(ll);
+        }
+
+        //MODIFICACION DE LLANTA _________________________________________________________________________
+        public IActionResult ModificarLlanta(int id) {
+            var llanta = _context.DataLlanta.Find(id);
+            ViewBag.DLL = _context.DataDetalleLlanta.ToList().Select(dll => new SelectListItem(dll.FotoLlanta, dll.DetalleLlantaId.ToString()));
+            ViewBag.V = _context.DataVehiculo.ToList().Select(v => new SelectListItem(v.TipoVehiculo, v.VehiculoId.ToString()));
+            return View(llanta);
+        }
+
+        [HttpPost]
+        public IActionResult ModificarLlanta(Llanta ll) {
+            if (ModelState.IsValid) {
+                var llanta = _context.DataLlanta.Find(ll.LlantaId);
+                llanta.Precio = ll.Precio;
+                llanta.Stock = ll.Stock;
+                llanta.DetalleLlantaId = ll.DetalleLlantaId;
+                llanta.VehiculoId = ll.VehiculoId;
+                _context.SaveChanges();
+                return RedirectToAction("Llanta");
+            }
+            return View(ll);
+        }
+
+
+        //ELIMINACION DE LLANTA ______________________________________________________
+        [HttpPost]
+        public IActionResult EliminarLlanta(int id) {
+            var llanta = _context.DataLlanta.Find(id);
+            _context.Remove(llanta);
+            _context.SaveChanges();
+            return RedirectToAction("Llanta");
+        }
     }
 }

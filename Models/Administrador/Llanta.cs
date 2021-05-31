@@ -16,10 +16,10 @@ namespace MaxService_1.Models.Producto
         [Column("Stock")]
         public int Stock { get; set; }
 
-        /*[ForeignKey("DetalleLlantaId_fk")]
+        [ForeignKey("DetalleLlantaId_fk")]
         public int DetalleLlantaId { get; set; }
         [ForeignKey("VehiculoId_fk")]
-        public int VehiculoId { get; set; }*/
+        public int VehiculoId { get; set; }
 
         public virtual DetalleLlanta DetalleLlanta{get; set;}
         public virtual Vehiculo Vehiculo{get; set;}
