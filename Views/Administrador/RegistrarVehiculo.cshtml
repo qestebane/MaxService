@@ -1,0 +1,20 @@
+@model MaxService_1.Models.Producto.Vehiculo
+YES
+<form class="text-white" action="" method="post">
+    <div class="form-group">
+        <label asp-for="TipoVehiculo">Tipo de Vehiculo</label>
+        <input asp-for="TipoVehiculo" class="form-control" placeholder="ingresar tipo de vehiculo...">
+    </div>
+
+    <div class="form-group">
+        <label asp-for="FotoVehiculo">Foto</label>
+        <input asp-for="FotoVehiculo" class="form-control" placeholder="ingresar foto del vehiculo...">
+    </div>
+
+    <div class="form-group">
+        <label asp-for="MarcaVehiculo">Marca de Vehiculo</label>
+        <select asp-for="MarcaVehiculoId" asp-items="ViewBag.MV" class="form-control"></select>
+    </div>
+
+    <button class="btn btn-primary">Registrar</button>
+</form>

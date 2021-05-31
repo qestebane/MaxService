@@ -1,0 +1,24 @@
+@model MaxService_1.Models.Producto.Vehiculo
+
+<h1>Editar Vehiculo</h1>
+
+<form action="" method="post">
+    <input type="hidden" asp-for="VehiculoId" />
+
+    <div class="form-group">
+        <label asp-for="TipoVehiculo">Tipo de Vehiculo</label>
+        <input asp-for="TipoVehiculo" class="form-control" >
+    </div>
+
+    <div class="form-group">
+        <label asp-for="FotoVehiculo">Foto</label>
+        <input asp-for="FotoVehiculo" class="form-control">
+    </div>
+
+    <div class="form-group">
+        <label asp-for="MarcaVehiculo">Marca de Vehiculo</label>
+        <select asp-for="MarcaVehiculoId" asp-items="ViewBag.MV" class="form-control"></select>
+    </div>
+
+    <button class="btn btn-primary">Editar</button>
+</form>
