@@ -1,5 +1,6 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -7,17 +8,16 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
 </head>
+
 <body>
-    <div style="height: 100%; position: fixed; width: 100%; z-index: -100;" class="embed-responsive embed-responsive-16by9">
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/QeV1D9a-hZg?controls=0&amp;start=7&amp;autoplay=1&loop=1&playlist=QeV1D9a-hZg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-    </div>
-    
+
+
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container">
                 <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">MaxService</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse"
+                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
@@ -26,23 +26,30 @@
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Administrador" asp-action="MarcaVehiculo">Marcas de Vehiculos</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Administrador"
+                                asp-action="MarcaVehiculo">Marcas de Vehiculos</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Administrador" asp-action="Vehiculo">Vehiculos</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Administrador"
+                                asp-action="Vehiculo">Vehiculos</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Administrador" asp-action="MarcaLlanta">Marcas de Llantas</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Administrador"
+                                asp-action="MarcaLlanta">Marcas de Llantas</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Administrador" asp-action="MedidaLlanta">Medidas de Llantas</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Administrador"
+                                asp-action="MedidaLlanta">Medidas de Llantas</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Administrador" asp-action="DetalleLlanta">Detalle de las Llantas</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Administrador"
+                                asp-action="DetalleLlanta">Detalle de las Llantas</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Administrador" asp-action="Llanta">Llantas</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Documento"
+                                asp-action="Documento">PDF</a>
                         </li>
+
                     </ul>
                 </div>
             </div>
@@ -64,4 +71,5 @@
     <script src="~/js/site.js" asp-append-version="true"></script>
     @await RenderSectionAsync("Scripts", required: false)
 </body>
+
 </html>
