@@ -3,6 +3,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace MaxService.Models.Mantenimiento
 {
+    [Table("t_login")]
     public class Login
     {
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
