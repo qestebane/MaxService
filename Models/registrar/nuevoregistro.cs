@@ -1,3 +1,4 @@
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace MaxService.Models.registrar
@@ -11,16 +12,18 @@ namespace MaxService.Models.registrar
         [Column("Id")] 
         public int Id { get; set; }
 
+
+        [Required]
         [Column("nombre")]
-        public int nombre { get; set; }
+        public string nombre { get; set; }
 
         [Column("apellido")]
-        public char apellido { get; set; }
+        public string apellido { get; set; }
 
        [Column("Correo")]
         public string correo { get; set; }  
 
-
+       [Required]
        [Column("ruc") ]
         public  char  ruc  { get; set; }  
         [Column("dni") ]

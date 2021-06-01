@@ -6,14 +6,14 @@ namespace MaxService.Controllers
     public class RegistroController:Controller
     {
 
-     private  readonly ApplicationsRegistroDbContext  _context;
+    //  private  readonly ApplicationsRegistroDbContext  _context;
         
 
-        public RegistroController(ApplicationsRegistroDbContext context)
-        {
-            _context = context;
-        }
-       public IActionResult nuevoregistro(){
+        // public RegistroController(ApplicationsRegistroDbContext context)
+        // {
+        //     _context = context;
+        // }
+       public IActionResult Registro(){
             return View();
         }
 
