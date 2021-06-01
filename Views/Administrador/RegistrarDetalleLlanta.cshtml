@@ -1,0 +1,60 @@
+@model MaxService_1.Models.Producto.DetalleLlanta
+
+<form action="" method="post">
+    <div class="form-group">
+        <label asp-for="IndiceCarga">Indice de Carga</label>
+        <input asp-for="IndiceCarga" class="form-control" placeholder="ingresar Indice de Carga de la llanta...">
+    </div>
+
+    <div class="form-group">
+        <label asp-for="IndiceVelocidad">Indice Velocidad</label>
+        <input asp-for="IndiceVelocidad" class="form-control" placeholder="ingresar Indice de velocidad de la llanta...">
+    </div>
+
+    <div class="form-group">
+        <label asp-for="FotoLlanta">Foto de la llanta</label>
+        <input asp-for="FotoLlanta" class="form-control" placeholder="ingresar url de la imagen de la llanta...">
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Construccion">Construccion</label>
+        <input asp-for="Construccion" class="form-control" placeholder="ingresar Construccion de la llanta...">
+    </div>
+
+    <div class="form-group">
+        <label asp-for="PresionMaxima">Presion Maxima</label>
+        <input asp-for="PresionMaxima" class="form-control" placeholder="ingresar Presion Maxima de la llanta...">
+    </div>
+
+    <div class="form-group">
+        <label asp-for="LimiteCarga">Limite de Carga</label>
+        <input asp-for="LimiteCarga" class="form-control" placeholder="ingresar Limite de Carga de la llanta...">
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Clasificacion">Clasificacion</label>
+        <input asp-for="Clasificacion" class="form-control" placeholder="ingresar Clasificacion de la llanta...">
+    </div>
+
+    <div class="form-group">
+        <label asp-for="CodigoUTQG">Codigo UTQG</label>
+        <input asp-for="CodigoUTQG" class="form-control" placeholder="ingresar Codigo UTQG de la llanta...">
+    </div>
+
+    <div class="form-group">
+        <label asp-for="FechaFabricacion">Fecha de Fabricacion</label>
+        <input asp-for="FechaFabricacion" class="form-control" placeholder="ingresar Fecha de Fabricacion de la llanta...">
+    </div>
+  
+    <div class="form-group">
+        <label asp-for="MedidaLlanta">Medidas de la llanta</label>
+        <select asp-for="MedidaLlantaId" asp-items="ViewBag.Ancho" class="form-control"></select>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="MarcaLlanta">Marca de la llanta</label>
+        <select asp-for="MarcaLlantaId" asp-items="ViewBag.MLL" class="form-control"></select>
+    </div>
+
+    <button class="btn btn-primary">Registrar</button>
+</form>

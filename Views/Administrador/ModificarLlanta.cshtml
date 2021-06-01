@@ -1,0 +1,29 @@
+@model MaxService_1.Models.Producto.Llanta
+
+<h1>Editar Llanta</h1>
+
+<form action="" method="post">
+    <input type="hidden" asp-for="LlantaId" />
+
+    <div class="form-group">
+        <label asp-for="Precio">Precio</label>
+        <input asp-for="Precio" class="form-control" >
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Stock">Stock</label>
+        <input asp-for="Stock" class="form-control" >
+    </div>
+
+    <div class="form-group">
+        <label asp-for="DetalleLlanta">Detalle de la llanta</label>
+        <select asp-for="DetalleLlantaId" asp-items="ViewBag.DLL" class="form-control"></select>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Vehiculo">Vehiculo</label>
+        <select asp-for="VehiculoId" asp-items="ViewBag.V" class="form-control"></select>
+    </div>
+
+    <button class="btn btn-primary">Editar</button>
+</form>
