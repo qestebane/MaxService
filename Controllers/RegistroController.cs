@@ -1,4 +1,3 @@
-using MaxService.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace MaxService.Controllers
@@ -13,7 +12,8 @@ namespace MaxService.Controllers
         // {
         //     _context = context;
         // }
-       public IActionResult Registro(){
+
+        public IActionResult Registro(){
             return View();
         }
 
