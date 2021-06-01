@@ -1,0 +1,19 @@
+@model MaxService.Models.Mantenimiento.Login
+<div class="row-1 my-4">
+    <h1 class="text-center text-dark px-3">Login</h1>
+</div>
+
+<form asp-controller="Mantenimiento" asp-action="Entrar">
+    <div class="container">
+        <label asp-for="Email" class="control-label"></label>
+        <input asp-for="Email" class="form-control" />
+    </div>
+     <div class="container">
+        <label asp-for="Password" class="control-label"></label>
+        <input type="password" asp-for="Password" class="form-control" />
+    </div>
+
+    <div class="container my-2">
+        <button type="submit" class="btn btn-primary">Entrar</button> 
+    </div>              
+</form>
