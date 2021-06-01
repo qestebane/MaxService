@@ -1,0 +1,71 @@
+ @model MaxService.Models.registrar.nuevoregistro
+
+<h1>Registrar Datos del Comprador </h1>
+  <br>
+<form action="" method="post">
+    <div class="form-group col-md-6">
+        <label asp-for="Id">Id</label>
+        <input asp-for="Id" class="form-control"
+        >
+    </div>
+
+
+   
+    <div class="form-group col-md-6" >
+        <label asp-for="nombre"> Nombre</label>
+        <input asp-for="nombre" class="form-control" required  pattern="[a-zA-Z]+" placeholder="Ingrese nombre">
+    </div>
+
+    <div class="form-group col-md-6">
+        <label asp-for="apellido">Apellido</label>
+        <input asp-for="apellido" class="form-control" required  pattern="[a-zA-Z]+" placeholder="Ingrese Apellido">
+    </div>
+
+    <div class="form-group col-md-6">
+        <label asp-for="correo">Correo</label>
+        <input asp-for="correo" class="form-control"  type="email" required pattern=""placeholder="Ingrese correo">
+    </div>
+
+     <div class="form-group col-md-6 ">
+              <label  class="">Identificacion</label>
+                <select name="estado" id="" class="form-control">
+                  <option value="">Seleccionar</option>
+                  <option value="">Dni</option>
+                  <option value="">RUC</option>
+                </select>
+                <br>
+    <input asp-for="ruc" class="form-control" placeholder="">         
+    </div> 
+
+    <div class="form-group col-md-6 ">
+        <label asp-for="fecha">Fecha</label>
+        <input asp-for="fecha" type="date" class="form-control" >
+    </div>
+
+
+     <div class="form-group col-md-6 ">
+              <label  class="">Modo de pago</label>
+                <select name="estado" id="" class="form-control">
+                  <option value="">Seleccionar</option>
+                  <option value="">Letras</option>
+                  <option value="">Deposito</option>
+                  <option value="">Efectivo</option>
+                </select>
+                <br>
+    <input asp-for="saldo" class="form-control" placeholder="">         
+    </div>  
+
+    <div class="form-group col-md-6 ">
+        <label asp-for="foto">Adjuntar Documento de Identidad </label>
+        <input asp-for="foto" class="form-control" type="file" name="Imagen" >
+    </div>
+
+
+
+
+
+  <br>
+
+    <button class="btn btn-danger">Cancelar orden</button>
+     <button class="btn btn-success "> Siguiente</button>
+</form>
