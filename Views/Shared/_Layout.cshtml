@@ -21,23 +21,9 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                         </li>
+                        
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Administrador" asp-action="MarcaVehiculo">Marcas de Vehiculos</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Administrador" asp-action="Vehiculo">Vehiculos</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Administrador" asp-action="MarcaLlanta">Marcas de Llantas</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Administrador" asp-action="MedidaLlanta">Medidas de Llantas</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Administrador" asp-action="DetalleLlanta">Detalle de las Llantas</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Administrador" asp-action="Llanta">Llantas</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Producto" asp-action="Catalogo">CATALOGO</a>
                         </li>
                     </ul>
                 </div>
@@ -46,6 +32,14 @@
     </header>
     <div class="container">
         <main role="main" class="pb-3">
+            <li class="table" style="list-style: none; font-weight: bold;">
+                <a class="nav-link text-dark" asp-area="" asp-controller="Administrador" asp-action="MarcaVehiculo">Marcas de Vehiculos</a>
+                <a class="nav-link text-dark" asp-area="" asp-controller="Administrador" asp-action="Vehiculo">Vehiculos</a>
+                <a class="nav-link text-dark" asp-area="" asp-controller="Administrador" asp-action="MarcaLlanta">Marcas de Llantas</a>
+                <a class="nav-link text-dark" asp-area="" asp-controller="Administrador" asp-action="MedidaLlanta">Medidas de Llantas</a>
+                <a class="nav-link text-dark" asp-area="" asp-controller="Administrador" asp-action="DetalleLlanta">Detalle de las Llantas</a>
+                <a class="nav-link text-dark" asp-area="" asp-controller="Administrador" asp-action="Llanta">Llantas</a>
+            </li>
             @RenderBody()
         </main>
     </div>
