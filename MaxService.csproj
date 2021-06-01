@@ -11,6 +11,8 @@
     <PackageReference Include="microsoft.visualstudio.web.codegeneration.design" Version="5.0.2" />
     <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL.NetTopologySuite" Version="5.0.6" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="5.0.4" />
+    <PackageReference Include="Rotativa.AspNetCore" Version="1.2.0-beta" />
+    <PackageReference Include="RotativaHQ.AspNetCore" Version="1.2.1" />
   </ItemGroup>
 
 </Project>

@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using MaxService.Models;
+using Rotativa.AspNetCore;
 
 namespace MaxService.Controllers
 {
