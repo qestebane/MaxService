@@ -29,12 +29,37 @@
 .whatsapp-icon {
   margin-top:13px;
 }
+
+.facebook {
+ position: fixed; 
+  width:60px;
+ right:25px; /*Margen derecho*/
+ bottom:20px; /*Margen abajo*/
+ z-index:999;
+}
+.facebook img {
+ width:60px; /*Alto del icono*/
+ height:60px; /*Ancho del icono*/
+}
+.facebook:hover{
+opacity: 0.7 !important;
+filter: alpha(opacity=70) !important;
+}
+
+
 </style>
 </head>
 <body>
 	<a href="https://wa.me/054956968125?text=Me%20gustaría%20saber%20el%20precio%20del%20coche" class="whatsapp" target="_blank"> <i class="fa fa-whatsapp whatsapp-icon"></i></a>
 	
+
+ <a href="https://www.facebook.com/messages/t/2438978156155107" class="facebook" target="_blank" title="Contactame por Messenger">
+ <img src="https://www.peengler.com/wp-content/uploads/messenger.png" alt="Messenger" />
+ </a>
+
+
 </body>
+
 </html>
 
 
