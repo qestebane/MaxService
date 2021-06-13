@@ -184,7 +184,7 @@ namespace MaxService_1.Controllers
 
         //REGISTRO DE DETALLE DE LLANTA ____________________________________________________
         public IActionResult RegistrarDetalleLlanta(){
-            ViewBag.Ancho = _context.DataMedidaLlanta.ToList().Select(mell => new SelectListItem("Ancho: "+ mell.Ancho.ToString()+ ",  Diametro: " +mell.Diametro.ToString()+",  Perfil: "+mell.Perfil.ToString(), mell.MedidaLlantaId.ToString()));
+            ViewBag.Ancho = _context.DataMedidaLlanta.ToList().Select(mell => new SelectListItem("Ancho: "+ mell.Ancho.ToString()+ ",  Diametro: " +mell.Diametro.ToString()+",  Perfil: "+mell.Perfil.ToString()+", Milimmeto Cocada: "+mell.MmCocada.ToString(), mell.MedidaLlantaId.ToString()));
             return View();
         }
         
@@ -247,7 +247,9 @@ namespace MaxService_1.Controllers
 
         //REGISTRO DE LLANTA ____________________________________________________
         public IActionResult RegistrarLlanta(){
-            ViewBag.DLL = _context.DataDetalleLlanta.ToList().Select(dll => new SelectListItem(dll.FotoLlanta, dll.DetalleLlantaId.ToString()));
+            ViewBag.DLL = _context.DataDetalleLlanta.ToList().Select(dll => new SelectListItem(
+                "Marca: "+dll.NombreMarca+" - IC: "+dll.IndiceCarga+" - IV: "+dll.IndiceVelocidad+" - Construccion: "+dll.Construccion+
+                " - PM: "+dll.PresionMaxima+" - Clasificacion: "+dll.Clasificacion+" - Codigo Medida: "+dll.MedidaLlantaId, dll.DetalleLlantaId.ToString()));
             ViewBag.V = _context.DataVehiculo.ToList().Select(v => new SelectListItem(v.TipoVehiculo, v.VehiculoId.ToString()));
             return View();
         }

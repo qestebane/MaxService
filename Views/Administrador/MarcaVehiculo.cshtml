@@ -1,4 +1,9 @@
 @model List<MaxService_1.Models.MarcaVehiculo>
+
+<head>
+    <link rel="stylesheet" href="~/css/estilo.css">
+</head>
+
 <header>
         <nav class="navbar navbar-expand-sm  bg-white border-bottom mb-3">
             <div class="container">
@@ -16,9 +21,6 @@
                             <a class="nav-link text-dark" asp-area="" asp-controller="Administrador" asp-action="Vehiculo">Vehiculos</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Administrador" asp-action="MarcaLlanta">Marcas de Llantas</a>
-                        </li>
-                        <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Administrador" asp-action="MedidaLlanta">Medidas de Llantas</a>
                         </li>
                         <li class="nav-item">
@@ -33,8 +35,10 @@
         </nav>
     </header>
 <div class="text-center container row-1 my-4">
-    <h1 class="text-white" style="margin-bottom: 5%;">Lista de Marcas</h1>
+    <h1 class="text-dark" style="margin-bottom: 5%;">Lista de Marcas</h1>
 </div>
+
+<a href="/Administrador/RegistrarMarcaVehiculo" class="btn btn-primary">Añadir Marca Nueva</a>
 
 <table class="text-center table">
     <tr>
@@ -50,10 +54,10 @@
             <td>@item.Modelo</td>
 
             <td>
-                <a href="/Administrador/ModificarMarcaVehiculo/@item.MarcaVehiculoId" class="btn btn-secondary"> <img src="/img/logos/logoEditar.png" width="25px"> </a>
+                <a href="/Administrador/ModificarMarcaVehiculo/@item.MarcaVehiculoId" class="botonEE2 btn btn-secondary"> <img src="/img/logos/logoEditar.png" width="25px"> </a>
                 <form action="/Administrador/EliminarMarcaVehiculo" method="post" class="d-inline-block">
                     <input type="hidden" name="id" value="@item.MarcaVehiculoId" />
-                    <button class="btn btn-secondary"><img src="/img/logos/logoBorrar.png" width="25px"></button>
+                    <button class="botonEE2 btn btn-secondary"><img src="/img/logos/logoBorrar.png" width="25px"></button>
                 </form>
             </td>
         </tr>
@@ -67,5 +71,5 @@
     }
 </table>
 
-<a href="/Administrador/RegistrarMarcaVehiculo" class="btn btn-primary">Añadir Marca Nueva</a>
+
   

@@ -1,4 +1,9 @@
 @model List<MaxService_1.Models.Producto.DetalleLlanta>
+
+<head>
+    <link rel="stylesheet" href="~/css/estilo.css">
+</head>
+
 <header>
         <nav class="navbar navbar-expand-sm  bg-white border-bottom mb-3">
             <div class="container">
@@ -16,9 +21,6 @@
                             <a class="nav-link text-dark" asp-area="" asp-controller="Administrador" asp-action="Vehiculo">Vehiculos</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Administrador" asp-action="MarcaLlanta">Marcas de Llantas</a>
-                        </li>
-                        <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Administrador" asp-action="MedidaLlanta">Medidas de Llantas</a>
                         </li>
                         <li class="nav-item">
@@ -31,16 +33,15 @@
                 </div>
             </div>
         </nav>
-    </header>
-@* <head>
-    <link rel="stylesheet" href="~/css/estilo.css" />
-</head> *@
+</header>
 
 <div class="text-center container row-1 my-4">
-    <h1 style="margin-bottom: 5%;">Lista de Detalle de las Llantas</h1>
+    <h1 class="text-dark" style="margin-bottom: 5%;">Lista de Detalle de las Llantas</h1>
 </div>
 
-<table class="text-center table" style="width: 1500px; ">
+<a href="/Administrador/RegistrarDetalleLlanta" class="btn btn-primary">Añadir Detalle de Nueva Llanta</a>
+
+<table class="text-center table">
     <tr>
         <th>Id</th>
         <th>Indice de Carga</th>
@@ -49,7 +50,6 @@
         <th>Construccion</th>
         <th>Presion Maxima</th>
         <th>Clasificacion</th>
-        <th>Codigo UTQG</th>
         <th>Fecha de Fabricacion</th>
         <th>Medidas Id</th>
     </tr>
@@ -67,10 +67,10 @@
             <td>@item.MedidaLlantaId</td>
 
             <td>
-                <a href="/Administrador/ModificarDetalleLlanta/@item.DetalleLlantaId" class="btn btn-secondary"> <img src="/img/logos/logoEditar.png" width="25px"> </a>
+                <a href="/Administrador/ModificarDetalleLlanta/@item.DetalleLlantaId" class="botonEE btn btn-secondary"> <img src="/img/logos/logoEditar.png" width="25px"> </a>
                 <form action="/Administrador/EliminarDetalleLlanta" method="post" class="d-inline-block">
                     <input type="hidden" name="id" value="@item.DetalleLlantaId" />
-                    <button class="btn btn-secondary"><img src="/img/logos/logoBorrar.png" width="25px"></button>
+                    <button class="botonEE btn btn-secondary"><img src="/img/logos/logoBorrar.png" width="25px"></button>
                 </form>
             </td>
         </tr>
@@ -84,4 +84,3 @@
     }
 </table>
 
-<a href="/Administrador/RegistrarDetalleLlanta" class="btn btn-primary">Añadir Detalle de Nueva Llanta</a>

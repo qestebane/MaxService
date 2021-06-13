@@ -16,8 +16,5 @@ namespace MaxService.Controllers
         public IActionResult Index(){
             return View();
         }
-        public IActionResult Entrar(){
-            return View("_Layout2");
-        }
     }
 }

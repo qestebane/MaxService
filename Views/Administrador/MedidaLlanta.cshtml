@@ -1,4 +1,9 @@
 @model List<MaxService_1.Models.Producto.MedidaLlanta>
+
+<head>
+    <link rel="stylesheet" href="~/css/estilo.css">
+</head>
+
 <header>
     <nav class="navbar navbar-expand-sm  bg-white border-bottom mb-3">
         <div class="container">
@@ -30,7 +35,7 @@
     </nav>
 </header>
 <div class="text-center container row-1 my-4">
-    <h1 class="text-white" style="margin-bottom: 5%;">Lista de Medidas de Llantas</h1>
+    <h1 class="text-dark" style="margin-bottom: 5%;">Lista de Medidas de Llantas</h1>
 </div>
 
 <!--Boton para Añadir-->
@@ -54,10 +59,10 @@
             <td>@item.MmCocada</td>
 
             <td>
-                <a href="/Administrador/ModificarMedidaLlanta/@item.MedidaLlantaId" class="btn btn-secondary"> <img src="/img/logos/logoEditar.png" width="25px"> </a>
+                <a href="/Administrador/ModificarMedidaLlanta/@item.MedidaLlantaId" class="botonEE2 btn btn-secondary"> <img src="/img/logos/logoEditar.png" width="25px"> </a>
                 <form action="/Administrador/EliminarMedidaLlanta" method="post" class="d-inline-block">
                     <input type="hidden" name="id" value="@item.MedidaLlantaId" />
-                    <button class="btn btn-secondary"><img src="/img/logos/logoBorrar.png" width="25px"></button>
+                    <button class="botonEE2 btn btn-secondary"><img src="/img/logos/logoBorrar.png" width="25px"></button>
                 </form>
             </td>
         </tr>

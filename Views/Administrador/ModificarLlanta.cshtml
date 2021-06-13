@@ -7,22 +7,22 @@
 
     <div class="form-group">
         <label asp-for="Precio">Precio</label>
-        <input asp-for="Precio" class="form-control" >
+        <input asp-for="Precio" required class="form-control" >
     </div>
 
     <div class="form-group">
         <label asp-for="Stock">Stock</label>
-        <input asp-for="Stock" class="form-control" >
+        <input asp-for="Stock" required class="form-control" >
     </div>
 
     <div class="form-group">
         <label asp-for="DetalleLlanta">Detalle de la llanta</label>
-        <select asp-for="DetalleLlantaId" asp-items="ViewBag.DLL" class="form-control"></select>
+        <select asp-for="DetalleLlantaId" required asp-items="ViewBag.DLL" class="form-control"></select>
     </div>
 
     <div class="form-group">
         <label asp-for="Vehiculo">Vehiculo</label>
-        <select asp-for="VehiculoId" asp-items="ViewBag.V" class="form-control"></select>
+        <select asp-for="VehiculoId" required asp-items="ViewBag.V" class="form-control"></select>
     </div>
 
     <button class="btn btn-primary">Editar</button>
