@@ -34,3 +34,11 @@
     margin-left: 3%;
     border-radius: 5%;
 }
+
+select:hover{
+    box-shadow: blue 0px 0px 2px 2px;
+}
+
+option{
+    background-color: whitesmoke;
+}
