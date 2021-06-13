@@ -19,5 +19,8 @@ namespace MaxService_1.Models.Producto
         [Column("Perfil")]
         public int Perfil { get; set; }
 
+        [Column("MmCocada")]
+        public double MmCocada { get; set; }
+
     }
 }

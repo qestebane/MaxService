@@ -18,6 +18,7 @@ namespace MaxService_1.Models.Producto
 
         [ForeignKey("DetalleLlantaId_fk")]
         public int DetalleLlantaId { get; set; }
+        
         [ForeignKey("VehiculoId_fk")]
         public int VehiculoId { get; set; }
 
