@@ -349,8 +349,7 @@ MigrationBackup/
 # Ionide (cross platform F# VS Code tools) working folder
 .ionide/
 
-MaxService/bin/
-MaxService/obj/
-/MaxService-1/obj/
-/MaxService-1/bin/
+bin/
+obj/
 /.vscode/
+Migrations/
