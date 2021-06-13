@@ -7,39 +7,46 @@
     <title>@ViewData["Title"] - MaxService</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="~/css/fontawesome.css"/>
+    <link rel="stylesheet" href="~/css/templatemo-sixteen.css"/>
+     <link rel="stylesheet" href="~/css/owl.css"/>
 </head>
 <body style="background: url('../img/temporal/fondoo.jpg') no-repeat center fixed; background-size: cover;">
     <!--
     <div style="height: 100%; position: fixed; width: 100%; z-index: -100;" class="embed-responsive embed-responsive-16by9">
         <iframe width="560" height="315" src="https://www.youtube.com/embed/3BZ2ZMEfNL0?controls=0&amp;start=7&amp;autoplay=1&loop=1&playlist=3BZ2ZMEfNL0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </div>-->
-    <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+    <header >
+        <nav class="navbar navbar-expand-lg ">
+        
             <div class="container">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">MaxService</a>
+            <img src="~/img/Logo_SinFondo.png" alt="LOGO" width="50">
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index"><h2>MAX<em>SERVICES</em></h2></a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse"
                     aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                 <img src="~/img/logos/a.png" alt="LOGO" width="190">
                 <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index"></a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+               
+                <div class="collapse navbar-collapse collapse d-sm-inline-flexjustify-content-between">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                         </li>
                         
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Producto" asp-action="Catalogo">Catalogo</a>
+                            <a class="nav-link" asp-area="" asp-controller="Producto" asp-action="Catalogo">Catalogo</a>
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Registro" asp-action="Registro">registro</a>
+                            <a class="nav-link" asp-area="" asp-controller="Registro" asp-action="Registro">Registro</a>
                         </li>
                     </ul>
+                    
                 </div>
+                
             </div>
         </nav>
     </header>
@@ -53,7 +60,7 @@
         <div class="container">
             <!-- &copy; 2021 - MaxService - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a> -->
         </div>
-        <div class="col d-flex justify-content-around px-5">
+        <div class="col d-flex justify-content-around px-6">
             <a class="text-dark" asp-area="" asp-controller="Mantenimiento" asp-action="Index"> Mantenimiento </a>
         </div>
     </footer>
