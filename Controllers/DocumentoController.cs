@@ -20,5 +20,11 @@ namespace MaxService.Controllers
             return View();
         }
 
+        public IActionResult ticket()
+        {
+            return View();
+        }
+
+
     }
 }
