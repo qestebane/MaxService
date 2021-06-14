@@ -1,4 +1,27 @@
-
+.navbar .navbar-brand h2 em {
+  font-style: normal;
+  color: #f33f3f;
+}
+nav .active>.nav-link, .navbar .navbar-nav .nav-link.active, .navbar .navbar-nav .nav-link.show, .navbar .navbar-nav .show>.nav-link {
+  color: #f33f3f!important;
+  border-bottom: none!important;
+  padding-bottom: 15px;
+}
+.navbar .navbar-nav .nav-link:hover, .navbar .navbar-nav .active>.nav-link, .navbar .navbar-nav .nav-link.active, .navbar .navbar-nav .nav-link.show, .navbar .navbar-nav .show>.nav-link {
+  color: #f33f3f!important;
+  border-bottom: none!important;
+  padding-bottom: 15px;
+}
+.navbar .navbar-nav .nav-link:hover, .navbar .navbar-nav .active>.nav-link, .navbar .navbar-nav .nav-link.active, .navbar .navbar-nav .nav-link.show, .navbar .navbar-nav .show>.nav-link {
+  color: #fff;
+  padding-bottom: 25px;
+  border-bottom: 3px solid #f33f3f;
+}
+.navbar .navbar-nav .nav-link:hover, .navbar .navbar-nav .active>.nav-link, .navbar .navbar-nav .nav-link.active, .navbar .navbar-nav .nav-link.show, .navbar .navbar-nav .show>.nav-link {
+  color: #fff;
+  padding-bottom: 25px;
+  border-bottom: 3px solid #f33f3f;
+}
 
 .cajaP{
     width: 30%;
@@ -442,7 +465,8 @@
         right: 0;
         top: 0;
         bottom: 0;
-        background: #1F2A3C;
+        background: #212529;
+        /*background: #1F2A3C;*/
         z-index: 1;
       }
       
@@ -450,7 +474,7 @@
         position: relative;
         z-index: 2;
         text-align: center;
-        padding: 80px 0;
+        padding: 10px 0;
       }
       
       #footer .footer-top h3 {

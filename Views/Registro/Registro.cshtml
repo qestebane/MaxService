@@ -5,7 +5,10 @@
 <form action="" method="post">
     <div class="form-group col-md-6">
         <label asp-for="Id">Id</label>
-        <input asp-for="Id" class="form-control"
+        <input asp-for="Id" class="form-control" style="    background: #E0F9F6;
+    border: 2px solid #000000;
+    box-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
+    border-radius: 10px;"
         >
     </div>
 
@@ -13,51 +16,78 @@
    
     <div class="form-group col-md-6" >
         <label asp-for="nombre"> Nombre</label>
-        <input asp-for="nombre" class="form-control" required  pattern="[a-zA-Z]+" placeholder="Ingrese nombre">
+        <input asp-for="nombre" class="form-control" required  pattern="[a-zA-Z]+" placeholder="Ingrese nombre" style="    background: #E0F9F6;
+    border: 2px solid #000000;
+    box-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
+    border-radius: 10px;">
     </div>
 
     <div class="form-group col-md-6">
         <label asp-for="apellido">Apellido</label>
-        <input asp-for="apellido" class="form-control" required  pattern="[a-zA-Z]+" placeholder="Ingrese Apellido">
+        <input asp-for="apellido" class="form-control" required  pattern="[a-zA-Z]+" placeholder="Ingrese Apellido"style="    background: #E0F9F6;
+    border: 2px solid #000000;
+    box-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
+    border-radius: 10px;">
     </div>
 
     <div class="form-group col-md-6">
         <label asp-for="correo">Correo</label>
-        <input asp-for="correo" class="form-control"  placeholder="Ingrese correo">
+        <input asp-for="correo" class="form-control"  placeholder="Ingrese correo" style="    background: #E0F9F6;
+    border: 2px solid #000000;
+    box-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
+    border-radius: 10px;">
     </div>
 
      <div class="form-group col-md-6 ">
               <label  class="">Identificacion</label>
-                <select name="estado" id="" class="form-control">
+                <select name="estado" id="" class="form-control" style="    background: #E0F9F6;
+    border: 2px solid #000000;
+    box-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
+    border-radius: 10px;">
                   <option value="">Seleccionar</option>
                   <option value="">Dni</option>
                   <option value="">RUC</option>
                 </select>
                 <br>
-    <input asp-for="ruc" class="form-control" placeholder="">         
+    <input asp-for="ruc" class="form-control" placeholder="Dirección"style="    background: #E0F9F6;
+    border: 2px solid #000000;
+    box-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
+    border-radius: 10px;">         
     </div> 
 
     <div class="form-group col-md-6 ">
         <label asp-for="fecha">Fecha</label>
-        <input asp-for="fecha" type="date" class="form-control" >
+        <input asp-for="fecha" type="date" class="form-control" style="    background: #E0F9F6;
+    border: 2px solid #000000;
+    box-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
+    border-radius: 10px;">
     </div>
 
 
      <div class="form-group col-md-6 ">
               <label  class="">Modo de pago</label>
-                <select name="estado" id="" class="form-control">
+                <select name="estado" id="" class="form-control"style="background: #E0F9F6;
+    border: 2px solid #000000;
+    box-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
+    border-radius: 10px;">
                   <option value="">Seleccionar</option>
                   <option value="">Letras</option>
                   <option value="">Deposito</option>
                   <option value="">Efectivo</option>
                 </select>
                 <br>
-    <input asp-for="saldo" class="form-control" placeholder="">         
+    <input asp-for="saldo" class="form-control" placeholder="Tiempo de Plazo"style="background: #E0F9F6;
+    border: 2px solid #000000;
+    box-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
+    border-radius: 10px;" >         
     </div>  
 
     <div class="form-group col-md-6 ">
         <label asp-for="foto">Adjuntar Documento de Identidad </label>
-        <input asp-for="foto" class="form-control" type="file" name="Imagen" >
+        <input asp-for="foto" class="form-control" type="file" name="Imagen" style="    background: #E0F9F6;
+    border: 2px solid #000000;
+    box-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
+    border-radius: 10px;">
     </div>
 
 
