@@ -1,71 +1,58 @@
- @model MaxService.Models.registrar.nuevoregistro
+ @model MaxService.Models.Cliente.Registro
 
 <h1>Registrar Datos del Comprador </h1>
-  <br>
+
 <form action="" method="post">
+
     <div class="form-group col-md-6">
-        <label asp-for="Id">Id</label>
-        <input asp-for="Id" class="form-control"
-        >
-    </div>
-
-
-   
-    <div class="form-group col-md-6" >
-        <label asp-for="nombre"> Nombre</label>
-        <input asp-for="nombre" class="form-control" required  pattern="[a-zA-Z]+" placeholder="Ingrese nombre">
+        <label asp-for="Nombre">Nombre</label>
+        <input asp-for="Nombre" class="form-control" type="text" placeholder="Ingresar nombres...">
     </div>
 
     <div class="form-group col-md-6">
-        <label asp-for="apellido">Apellido</label>
-        <input asp-for="apellido" class="form-control" required  pattern="[a-zA-Z]+" placeholder="Ingrese Apellido">
+        <label asp-for="Apellido">Apellido</label>
+        <input asp-for="Apellido" class="form-control" type="text" placeholder="Ingresar nombres...">
     </div>
 
     <div class="form-group col-md-6">
-        <label asp-for="correo">Correo</label>
-        <input asp-for="correo" class="form-control"  placeholder="Ingrese correo">
+        <label asp-for="Correo">Correo</label>
+        <input asp-for="Correo" type="email" class="form-control" placeholder="Ingresar Correo...">
     </div>
 
-     <div class="form-group col-md-6 ">
-              <label  class="">Identificacion</label>
-                <select name="estado" id="" class="form-control">
-                  <option value="">Seleccionar</option>
-                  <option value="">Dni</option>
-                  <option value="">RUC</option>
-                </select>
-                <br>
-    <input asp-for="ruc" class="form-control" placeholder="">         
-    </div> 
-
-    <div class="form-group col-md-6 ">
-        <label asp-for="fecha">Fecha</label>
-        <input asp-for="fecha" type="date" class="form-control" >
+    <div class="form-group col-md-6">
+        <label asp-for="Documento">Documento</label>
+        <input asp-for="Documento" type="number" class="form-control" placeholder="Ingresar DNI/RUC...">
     </div>
 
-
-     <div class="form-group col-md-6 ">
-              <label  class="">Modo de pago</label>
-                <select name="estado" id="" class="form-control">
-                  <option value="">Seleccionar</option>
-                  <option value="">Letras</option>
-                  <option value="">Deposito</option>
-                  <option value="">Efectivo</option>
-                </select>
-                <br>
-    <input asp-for="saldo" class="form-control" placeholder="">         
-    </div>  
-
-    <div class="form-group col-md-6 ">
-        <label asp-for="foto">Adjuntar Documento de Identidad </label>
-        <input asp-for="foto" class="form-control" type="file" name="Imagen" >
+    <div class="form-group col-md-6">
+        <label asp-for="FechaEntrega">Fecha de Entrega</label>
+        <input asp-for="FechaEntrega" type="date" class="form-control" placeholder="Ingresar fecha de entrega...">
     </div>
 
+    <div class="form-group col-md-6">
+        <label asp-for="DireccionEntrega">Direccion de entrega</label>
+        <input asp-for="DireccionEntrega" class="form-control" placeholder="Ingresar direccion de entrega...">
+    </div>
 
+    <div class="form-group col-md-6">
+        <label asp-for="ModoPago">Modo de Pago</label>
+        <select asp-for="ModoPago" class="form-control" >
+          <option value="Letras">Letras</option>
+          <option value="Deposito">Deposito</option>
+          <option value="Efectivo">Efectivo</option>
+        </select>
+    </div>
 
+    <div class="form-group col-md-6">
+        <label asp-for="PlazoPago">Plazo</label>
+        <input asp-for="PlazoPago" class="form-control" placeholder="Ingresar dias de plazo...">
+    </div>
 
+    <div class="form-group col-md-6">
+        <label asp-for="Adjunto">Adjuntar</label>
+        <input asp-for="Adjunto" class="form-control" type="file">
+    </div>
 
-    <br>
-    <button class="btn btn-danger">Cancelar orden</button>
+    <button class="btn btn-primary">Siguiente</button>
 </form>
 
-<a class="btn btn-primary" asp-area="" asp-controller="Documento" asp-action="Documento">Siguiente</a>

@@ -1,13 +1,28 @@
+using System;
+using System.Linq;
+using MaxService.Models.Cliente;
 using Microsoft.AspNetCore.Mvc;
+using MonoGamingStore.Data;
 using Rotativa.AspNetCore;
 
 namespace MaxService.Controllers
 {
     public class DocumentoController : Controller
     {
-        public IActionResult Documento()
+        private  readonly ApplicationDbContext  _context;
+
+        public DocumentoController(ApplicationDbContext context)
         {
-            return new ViewAsPdf("Documento");
+            _context = context;
         }
+
+        /*public IActionResult Documento()
+        {
+            var doc = _context.DataRegistro.OrderBy(x => x.RegistroId).ToList();
+            //return new ViewAsPdf("Documento");
+            return View(doc);
+        }*/
+
+        
     }
 }

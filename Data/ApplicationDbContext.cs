@@ -19,5 +19,7 @@ namespace MonoGamingStore.Data
         public DbSet<MaxService_1.Models.Producto.Llanta> DataLlanta { get; set; }
         public DbSet<MaxService.Models.Mantenimiento.Login> DataMantenimiento { get; set; }
         public DbSet<MaxService.Models.Listado.Listar> DataLista { get; set; }
+
+        public DbSet<MaxService.Models.Cliente.Registro> DataRegistro { get; set; }
     }
 }

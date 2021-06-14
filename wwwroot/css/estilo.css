@@ -91,3 +91,19 @@ option{
     box-shadow: black 0px 0px 2px 2px;
     cursor: pointer;
 }
+
+.RUC{
+    visibility: visible;
+}
+
+#opcion input:checked{
+    box-shadow: blue 0px 0px 2px 2px;
+    display: block;
+}
+
+#opcion input.DNI:checked{
+    box-shadow: blue 0px 0px 2px 2px;
+    display: none;
+}
+
+

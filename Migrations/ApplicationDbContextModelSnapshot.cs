@@ -19,6 +19,68 @@ namespace MaxService.Migrations
                 .HasAnnotation("ProductVersion", "5.0.6")
                 .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
 
+            modelBuilder.Entity("MaxService.Models.Cliente.Registro", b =>
+                {
+                    b.Property<int>("RegistroId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer")
+                        .HasColumnName("RegistroId")
+                        .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
+
+                    b.Property<string>("Adjunto")
+                        .IsRequired()
+                        .HasColumnType("text")
+                        .HasColumnName("Adjunto");
+
+                    b.Property<string>("Apellido")
+                        .IsRequired()
+                        .HasColumnType("text")
+                        .HasColumnName("Apellido");
+
+                    b.Property<string>("Correo")
+                        .IsRequired()
+                        .HasColumnType("text")
+                        .HasColumnName("Correo");
+
+                    b.Property<string>("DireccionEntrega")
+                        .IsRequired()
+                        .HasColumnType("text")
+                        .HasColumnName("DireccionEntrega");
+
+                    b.Property<int>("Documento")
+                        .HasColumnType("integer")
+                        .HasColumnName("Documento");
+
+                    b.Property<string>("FechaActual")
+                        .IsRequired()
+                        .HasColumnType("text")
+                        .HasColumnName("FechaActual");
+
+                    b.Property<string>("FechaEntrega")
+                        .IsRequired()
+                        .HasColumnType("text")
+                        .HasColumnName("FechaEntrega");
+
+                    b.Property<string>("ModoPago")
+                        .IsRequired()
+                        .HasColumnType("text")
+                        .HasColumnName("ModoPago");
+
+                    b.Property<string>("Nombre")
+                        .IsRequired()
+                        .HasColumnType("text")
+                        .HasColumnName("Nombre");
+
+                    b.Property<string>("PlazoPago")
+                        .IsRequired()
+                        .HasColumnType("text")
+                        .HasColumnName("PlazoPago");
+
+                    b.HasKey("RegistroId");
+
+                    b.ToTable("T_Registro");
+                });
+
             modelBuilder.Entity("MaxService.Models.Listado.Listar", b =>
                 {
                     b.Property<int>("ListarId")
