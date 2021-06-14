@@ -1,5 +1,4 @@
-.CajaGeneral{
-}
+
 
 .cajaP{
     width: 30%;
@@ -34,4 +33,31 @@
     margin-bottom: 10%;
     margin-left: 3%;
     border-radius: 5%;
+}
+
+select:hover{
+    box-shadow: blue 0px 0px 2px 2px;
+}
+
+option{
+    background-color: whitesmoke;
+}
+
+.botonEE{
+    cursor: pointer;
+    margin: 5%;
+}
+
+.botonEE:hover{
+    margin: 3%;
+    box-shadow: blue 0px 0px 2px 2px;
+}
+
+.botonEE2{
+    cursor: pointer;
+}
+
+.botonEE2:hover{
+    margin: 1%;
+    box-shadow: blue 0px 0px 2px 2px;
 }

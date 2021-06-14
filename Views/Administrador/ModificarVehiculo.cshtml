@@ -7,12 +7,16 @@
 
     <div class="form-group">
         <label asp-for="TipoVehiculo">Tipo de Vehiculo</label>
-        <input asp-for="TipoVehiculo" class="form-control" >
+        <select asp-for="TipoVehiculo" class="form-control" >
+            <option value="Camion">Camion</option>
+            <option value="Camioneta">Camioneta</option>
+            <option value="Maquinaria Pesada">Maquinaria Pesada</option>
+        </select>
     </div>
 
     <div class="form-group">
         <label asp-for="FotoVehiculo">Foto</label>
-        <input asp-for="FotoVehiculo" class="form-control">
+        <input asp-for="FotoVehiculo" class="form-control" >
     </div>
 
     <div class="form-group">

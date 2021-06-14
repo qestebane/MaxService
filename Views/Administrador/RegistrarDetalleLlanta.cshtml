@@ -1,59 +1,100 @@
 @model MaxService_1.Models.Producto.DetalleLlanta
 
+<head>
+	<link rel="stylesheet" href="~/css/estilo.css">
+</head>
+
 <form action="" method="post">
+
     <div class="form-group">
-        <label asp-for="IndiceCarga">Indice de Carga</label>
-        <input asp-for="IndiceCarga" class="form-control" placeholder="ingresar Indice de Carga de la llanta...">
+        <label asp-for="NombreMarca">Seleccionar la Marca</label>
+        <select asp-for="NombreMarca" class="form-control">
+            <option value="Pirelli">Pirelli</option>
+            <option value="Bridgestone">Bridgestone</option>
+            <option value="Firestone">Firestone</option>
+            <option value="GoodYear">GoodYear</option>
+            <option value="Yokohama">Yokohama</option>
+            <option value="Michelin">Michelin</option>
+            <option value="Continental">Continental</option>
+        </select>
     </div>
 
     <div class="form-group">
-        <label asp-for="IndiceVelocidad">Indice Velocidad</label>
-        <input asp-for="IndiceVelocidad" class="form-control" placeholder="ingresar Indice de velocidad de la llanta...">
+        @{
+            int pos = 0;
+            int[] cargaKg = new int[] {
+                290,300,307,315,325,335,345,355,365,375,387,400,412,
+                425,437,450,462,475,487,500,515,530,545,560,580,600,
+                615,630,650,670,690,710,730,750,775,800,825,850,875,
+                900,925,950,975,1000,1030,1060,1090,1120,1150,1180,1215,1250,
+                1285,1320,1360,1400,1450,1500,1550,1600,1650,1700,1750,1800,1850};
+        }
+        <label asp-for="IndiceCarga">Indice de Carga</label>
+        <select asp-for="IndiceCarga" class="form-control">
+            @for (int i = 65; i < 65+cargaKg.Length; i++)
+            {
+                <option value="@i" >
+                    <p>Indice de Carga: @i - </p>
+                    <p>Carga en Kg: @cargaKg[pos]</p>
+                </option>
+                pos++;
+            }
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="IndiceVelocidad">Seleccionar el Indice de Velocidad</label>
+        <select asp-for="IndiceVelocidad" required class="form-control">
+            <option value="Q">Q = 160 km/h</option>
+            <option value="R">R = 170 km/h</option>
+            <option value="S">S = 180 km/h</option>
+            <option value="T">T = 190 km/h</option>
+            <option value="U">U = 200 km/h</option>
+            <option value="H">H = 210 km/h</option>
+            <option value="V">V = 240 km/h</option>
+            <option value="ZR">ZR = >240 km/h</option>
+            <option value="W">W = 270 km/h</option>
+            <option value="Y">Y = 300 km/h</option>
+        </select>
     </div>
 
     <div class="form-group">
         <label asp-for="FotoLlanta">Foto de la llanta</label>
-        <input asp-for="FotoLlanta" class="form-control" placeholder="ingresar url de la imagen de la llanta...">
+        <input asp-for="FotoLlanta" required class="form-control" placeholder="ingresar url de la imagen de la llanta...">
     </div>
 
     <div class="form-group">
         <label asp-for="Construccion">Construccion</label>
-        <input asp-for="Construccion" class="form-control" placeholder="ingresar Construccion de la llanta...">
+        <select asp-for="Construccion" required class="form-control">
+            <option value="Diagonal">Diagonal</option>
+            <option value="Solida">Solida</option>
+            <option value="Radial">Radial</option>
+        </select>
     </div>
 
     <div class="form-group">
         <label asp-for="PresionMaxima">Presion Maxima</label>
-        <input asp-for="PresionMaxima" class="form-control" placeholder="ingresar Presion Maxima de la llanta...">
-    </div>
-
-    <div class="form-group">
-        <label asp-for="LimiteCarga">Limite de Carga</label>
-        <input asp-for="LimiteCarga" class="form-control" placeholder="ingresar Limite de Carga de la llanta...">
+        <input asp-for="PresionMaxima" required class="form-control" placeholder="ingresar Presion Maxima de la llanta...">
     </div>
 
     <div class="form-group">
         <label asp-for="Clasificacion">Clasificacion</label>
-        <input asp-for="Clasificacion" class="form-control" placeholder="ingresar Clasificacion de la llanta...">
-    </div>
-
-    <div class="form-group">
-        <label asp-for="CodigoUTQG">Codigo UTQG</label>
-        <input asp-for="CodigoUTQG" class="form-control" placeholder="ingresar Codigo UTQG de la llanta...">
+        <select asp-for="Clasificacion" class="form-control">
+            <option value="Pavimento">Pavimento</option>
+            <option value="Alta Gama">Alta Gama</option>
+            <option value="Todo Terreno">Todo Terreno</option>
+            <option value="Pantanosas">Pantanosas</option>
+        </select>
     </div>
 
     <div class="form-group">
         <label asp-for="FechaFabricacion">Fecha de Fabricacion</label>
-        <input asp-for="FechaFabricacion" class="form-control" placeholder="ingresar Fecha de Fabricacion de la llanta...">
+        <input asp-for="FechaFabricacion" type="date" class="form-control" placeholder="ingresar Fecha de Fabricacion de la llanta...">
     </div>
   
     <div class="form-group">
         <label asp-for="MedidaLlanta">Medidas de la llanta</label>
         <select asp-for="MedidaLlantaId" asp-items="ViewBag.Ancho" class="form-control"></select>
-    </div>
-
-    <div class="form-group">
-        <label asp-for="MarcaLlanta">Marca de la llanta</label>
-        <select asp-for="MarcaLlantaId" asp-items="ViewBag.MLL" class="form-control"></select>
     </div>
 
     <button class="btn btn-primary">Registrar</button>

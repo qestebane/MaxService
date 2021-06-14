@@ -1,3 +1,4 @@
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace MaxService_1.Models.Producto
@@ -10,41 +11,42 @@ namespace MaxService_1.Models.Producto
         [Column("DetalleLlantaId")] //PK
         public int DetalleLlantaId { get; set; }
 
+        [Required]
+        [Column("NombreMarca")]
+        public string NombreMarca { get; set; }
+
+        [Required]
         [Column("IndiceCarga")]
         public int IndiceCarga { get; set; }
 
+        [Required]
         [Column("IndiceVelocidad")]
-        public char IndiceVelocidad { get; set; }
+        public string IndiceVelocidad { get; set; }
 
+        [Required]
         [Column("FotoLlanta")]
         public string FotoLlanta { get; set; }
 
+        [Required]
         [Column("Construccion")]
-        public char Construccion { get; set; }
+        public string Construccion { get; set; }
 
+        [Required]
         [Column("PresionMaxima")]
         public string PresionMaxima { get; set; }
 
-        [Column("LimiteCarga")]
-        public string LimiteCarga { get; set; }
-
+        [Required]
         [Column("Clasificacion")]
         public string Clasificacion { get; set; }
 
-        [Column("CodigoUTQG")]
-        public string CodigoUTQG { get; set; }
-
+        [Required]
         [Column("FechaFabricacion")]
         public string FechaFabricacion { get; set; }
 
+        [Required]
         [ForeignKey("MedidaLlantaId_fk")]
         public int MedidaLlantaId { get; set; }
-        
-        [ForeignKey("MarcaLlantaId_fk")]
-        public int MarcaLlantaId { get; set; }
 
         public virtual MedidaLlanta MedidaLlanta{get; set;}
-
-        public virtual MarcaLlanta MarcaLlanta{get; set;}
     }
 }

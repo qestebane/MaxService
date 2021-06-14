@@ -122,56 +122,6 @@ namespace MaxService_1.Controllers
 
 
         //---
-        //LISTADO DE Marcas de LLantas _______________________________________________
-        public IActionResult MarcaLlanta(){
-            var marca_llanta = _context.DataMarcaLlanta.OrderBy(mll => mll.MarcaLlantaId).ToList();
-            return View(marca_llanta);
-        }
-
-        //REGISTRO DE MARCA DE LLANTA ____________________________________________________
-        public IActionResult RegistrarMarcaLlanta(){
-            return View();
-        }
-        
-        [HttpPost]
-        public IActionResult RegistrarMarcaLlanta(MarcaLlanta mll){
-            if(ModelState.IsValid){
-                _context.Add(mll);
-                _context.SaveChanges();
-                return RedirectToAction("MarcaLlanta");
-            }
-            return View(mll);
-        }
-
-        //MODIFICACION DE MARCA de LLANTA _________________________________________________________________________
-        public IActionResult ModificarMarcaLlanta(int id) {
-            var marca_llanta = _context.DataMarcaLlanta.Find(id);
-            return View(marca_llanta);
-        }
-
-        [HttpPost]
-        public IActionResult ModificarMarcaLlanta(MarcaLlanta mll) {
-            if (ModelState.IsValid) {
-                var marca_llanta = _context.DataMarcaLlanta.Find(mll.MarcaLlantaId);
-                marca_llanta.NombreMarca = mll.NombreMarca;
-                _context.SaveChanges();
-                return RedirectToAction("MarcaLlanta");
-            }
-            return View(mll);
-        }
-
-
-        //ELIMINACION DE MARCA DE LLANTA ______________________________________________________
-        [HttpPost]
-        public IActionResult EliminarMarcaLlanta(int id) {
-            var marca_llanta = _context.DataMarcaLlanta.Find(id);
-            _context.Remove(marca_llanta);
-            _context.SaveChanges();
-            return RedirectToAction("MarcaLlanta");
-        }
-
-
-        //---
         //LISTADO DE MEDIDAS de las LLantas _______________________________________________
         public IActionResult MedidaLlanta(){
             var medida_llanta = _context.DataMedidaLlanta.OrderBy(mell => mell.MedidaLlantaId).ToList();
@@ -206,6 +156,7 @@ namespace MaxService_1.Controllers
                 medida_llanta.Ancho = mell.Ancho;
                 medida_llanta.Diametro = mell.Diametro;
                 medida_llanta.Perfil = mell.Perfil;
+                medida_llanta.MmCocada = mell.MmCocada;
                 _context.SaveChanges();
                 return RedirectToAction("MedidaLlanta");
             }
@@ -213,7 +164,7 @@ namespace MaxService_1.Controllers
         }
 
 
-        //ELIMINACION DE MARCA DE LLANTA ______________________________________________________
+        //ELIMINACION DE MEDIDA DE LLANTA ______________________________________________________
         [HttpPost]
         public IActionResult EliminarMedidaLlanta(int id) {
             var medida_llanta = _context.DataMedidaLlanta.Find(id);
@@ -233,8 +184,7 @@ namespace MaxService_1.Controllers
 
         //REGISTRO DE DETALLE DE LLANTA ____________________________________________________
         public IActionResult RegistrarDetalleLlanta(){
-            ViewBag.Ancho = _context.DataMedidaLlanta.ToList().Select(mell => new SelectListItem("Ancho: "+ mell.Ancho.ToString()+ ",  Diametro: " +mell.Diametro.ToString()+",  Perfil: "+mell.Perfil.ToString(), mell.MedidaLlantaId.ToString()));
-            ViewBag.MLL = _context.DataMarcaLlanta.ToList().Select(mll => new SelectListItem(mll.NombreMarca, mll.MarcaLlantaId.ToString()));
+            ViewBag.Ancho = _context.DataMedidaLlanta.ToList().Select(mell => new SelectListItem("Ancho: "+ mell.Ancho.ToString()+ ",  Diametro: " +mell.Diametro.ToString()+",  Perfil: "+mell.Perfil.ToString()+", Milimmeto Cocada: "+mell.MmCocada.ToString(), mell.MedidaLlantaId.ToString()));
             return View();
         }
         
@@ -255,7 +205,6 @@ namespace MaxService_1.Controllers
         public IActionResult ModificarDetalleLlanta(int id) {
             var detalle_llanta = _context.DataDetalleLlanta.Find(id);
             ViewBag.Ancho = _context.DataMedidaLlanta.ToList().Select(mell => new SelectListItem("Ancho: "+ mell.Ancho.ToString()+ ",  Diametro: " +mell.Diametro.ToString()+",  Perfil: "+mell.Perfil.ToString(), mell.MedidaLlantaId.ToString()));
-            ViewBag.MLL = _context.DataMarcaLlanta.ToList().Select(mll => new SelectListItem(mll.NombreMarca, mll.MarcaLlantaId.ToString()));
             return View(detalle_llanta);
         }
 
@@ -263,18 +212,15 @@ namespace MaxService_1.Controllers
         public IActionResult ModificarDetalleLlanta(DetalleLlanta dll) {
             if (ModelState.IsValid) {
                 var detalle_llanta = _context.DataDetalleLlanta.Find(dll.DetalleLlantaId);
+                detalle_llanta.NombreMarca = dll.NombreMarca;
                 detalle_llanta.IndiceCarga = dll.IndiceCarga;
-                detalle_llanta.IndiceVelocidad = dll.IndiceVelocidad;
                 detalle_llanta.IndiceVelocidad = dll.IndiceVelocidad;
                 detalle_llanta.FotoLlanta = dll.FotoLlanta;
                 detalle_llanta.Construccion = dll.Construccion;
                 detalle_llanta.PresionMaxima = dll.PresionMaxima;
-                detalle_llanta.LimiteCarga = dll.LimiteCarga;
                 detalle_llanta.Clasificacion = dll.Clasificacion;
-                detalle_llanta.CodigoUTQG = dll.CodigoUTQG;
                 detalle_llanta.FechaFabricacion = dll.FechaFabricacion;
                 detalle_llanta.MedidaLlantaId = dll.MedidaLlantaId;
-                detalle_llanta.MarcaLlantaId = dll.MarcaLlantaId;
                 _context.SaveChanges();
                 return RedirectToAction("DetalleLlanta");
             }
@@ -301,7 +247,9 @@ namespace MaxService_1.Controllers
 
         //REGISTRO DE LLANTA ____________________________________________________
         public IActionResult RegistrarLlanta(){
-            ViewBag.DLL = _context.DataDetalleLlanta.ToList().Select(dll => new SelectListItem(dll.FotoLlanta, dll.DetalleLlantaId.ToString()));
+            ViewBag.DLL = _context.DataDetalleLlanta.ToList().Select(dll => new SelectListItem(
+                "Marca: "+dll.NombreMarca+" - IC: "+dll.IndiceCarga+" - IV: "+dll.IndiceVelocidad+" - Construccion: "+dll.Construccion+
+                " - PM: "+dll.PresionMaxima+" - Clasificacion: "+dll.Clasificacion+" - Codigo Medida: "+dll.MedidaLlantaId, dll.DetalleLlantaId.ToString()));
             ViewBag.V = _context.DataVehiculo.ToList().Select(v => new SelectListItem(v.TipoVehiculo, v.VehiculoId.ToString()));
             return View();
         }

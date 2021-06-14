@@ -1,9 +1,13 @@
 @model MaxService_1.Models.Producto.Vehiculo
-YES
-<form class="text-white" action="" method="post">
+
+<form class="text-dark" action="" method="post">
     <div class="form-group">
         <label asp-for="TipoVehiculo">Tipo de Vehiculo</label>
-        <input asp-for="TipoVehiculo" class="form-control" placeholder="ingresar tipo de vehiculo...">
+        <select asp-for="TipoVehiculo" class="form-control" >
+            <option value="Camion">Camion</option>
+            <option value="Camioneta">Camioneta</option>
+            <option value="Maquinaria Pesada">Maquinaria Pesada</option>
+        </select>
     </div>
 
     <div class="form-group">

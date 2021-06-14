@@ -11,8 +11,6 @@ namespace MaxService.Models.registrar
 
         [Column("Id")] 
         public int Id { get; set; }
-
-
     
         [Column("nombre")]
         public string nombre { get; set; }
@@ -22,13 +20,11 @@ namespace MaxService.Models.registrar
 
        [Column("Correo")]
         public string correo { get; set; }  
-
        
        [Column("ruc") ]
         public  char  ruc  { get; set; }  
         [Column("dni") ]
         public  char  dni  { get; set; }  
-
 
         [Column("fecha")]
         public DataType fecha { get; set; }

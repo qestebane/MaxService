@@ -40,23 +40,6 @@ namespace MaxService.Migrations
                     b.ToTable("t_login");
                 });
 
-            modelBuilder.Entity("MaxService_1.Models.MarcaLlanta", b =>
-                {
-                    b.Property<int>("MarcaLlantaId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("integer")
-                        .HasColumnName("MarcaLlantaId")
-                        .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
-
-                    b.Property<string>("NombreMarca")
-                        .HasColumnType("text")
-                        .HasColumnName("NombreMarca");
-
-                    b.HasKey("MarcaLlantaId");
-
-                    b.ToTable("T_MarcaLlanta");
-                });
-
             modelBuilder.Entity("MaxService_1.Models.MarcaVehiculo", b =>
                 {
                     b.Property<int>("MarcaVehiculoId")
@@ -66,10 +49,12 @@ namespace MaxService.Migrations
                         .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
 
                     b.Property<string>("Modelo")
+                        .IsRequired()
                         .HasColumnType("text")
                         .HasColumnName("Modelo");
 
                     b.Property<string>("NombreMarca")
+                        .IsRequired()
                         .HasColumnType("text")
                         .HasColumnName("NombreMarca");
 
@@ -87,22 +72,22 @@ namespace MaxService.Migrations
                         .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
 
                     b.Property<string>("Clasificacion")
+                        .IsRequired()
                         .HasColumnType("text")
                         .HasColumnName("Clasificacion");
 
-                    b.Property<string>("CodigoUTQG")
+                    b.Property<string>("Construccion")
+                        .IsRequired()
                         .HasColumnType("text")
-                        .HasColumnName("CodigoUTQG");
-
-                    b.Property<char>("Construccion")
-                        .HasColumnType("character(1)")
                         .HasColumnName("Construccion");
 
                     b.Property<string>("FechaFabricacion")
+                        .IsRequired()
                         .HasColumnType("text")
                         .HasColumnName("FechaFabricacion");
 
                     b.Property<string>("FotoLlanta")
+                        .IsRequired()
                         .HasColumnType("text")
                         .HasColumnName("FotoLlanta");
 
@@ -110,27 +95,25 @@ namespace MaxService.Migrations
                         .HasColumnType("integer")
                         .HasColumnName("IndiceCarga");
 
-                    b.Property<char>("IndiceVelocidad")
-                        .HasColumnType("character(1)")
-                        .HasColumnName("IndiceVelocidad");
-
-                    b.Property<string>("LimiteCarga")
+                    b.Property<string>("IndiceVelocidad")
+                        .IsRequired()
                         .HasColumnType("text")
-                        .HasColumnName("LimiteCarga");
-
-                    b.Property<int>("MarcaLlantaId")
-                        .HasColumnType("integer");
+                        .HasColumnName("IndiceVelocidad");
 
                     b.Property<int>("MedidaLlantaId")
                         .HasColumnType("integer");
 
+                    b.Property<string>("NombreMarca")
+                        .IsRequired()
+                        .HasColumnType("text")
+                        .HasColumnName("NombreMarca");
+
                     b.Property<string>("PresionMaxima")
+                        .IsRequired()
                         .HasColumnType("text")
                         .HasColumnName("PresionMaxima");
 
                     b.HasKey("DetalleLlantaId");
-
-                    b.HasIndex("MarcaLlantaId");
 
                     b.HasIndex("MedidaLlantaId");
 
@@ -184,6 +167,10 @@ namespace MaxService.Migrations
                         .HasColumnType("integer")
                         .HasColumnName("Diametro");
 
+                    b.Property<double>("MmCocada")
+                        .HasColumnType("double precision")
+                        .HasColumnName("MmCocada");
+
                     b.Property<int>("Perfil")
                         .HasColumnType("integer")
                         .HasColumnName("Perfil");
@@ -202,6 +189,7 @@ namespace MaxService.Migrations
                         .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
 
                     b.Property<string>("FotoVehiculo")
+                        .IsRequired()
                         .HasColumnType("text")
                         .HasColumnName("FotoVehiculo");
 
@@ -209,6 +197,7 @@ namespace MaxService.Migrations
                         .HasColumnType("integer");
 
                     b.Property<string>("TipoVehiculo")
+                        .IsRequired()
                         .HasColumnType("text")
                         .HasColumnName("TipoVehiculo");
 
@@ -415,19 +404,11 @@ namespace MaxService.Migrations
 
             modelBuilder.Entity("MaxService_1.Models.Producto.DetalleLlanta", b =>
                 {
-                    b.HasOne("MaxService_1.Models.MarcaLlanta", "MarcaLlanta")
-                        .WithMany()
-                        .HasForeignKey("MarcaLlantaId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
                     b.HasOne("MaxService_1.Models.Producto.MedidaLlanta", "MedidaLlanta")
                         .WithMany()
                         .HasForeignKey("MedidaLlantaId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-
-                    b.Navigation("MarcaLlanta");
 
                     b.Navigation("MedidaLlanta");
                 });
