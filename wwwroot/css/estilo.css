@@ -8,9 +8,9 @@
 }
 
 .imagenP{
-    margin-top: 10%;
+    margin-top: 0%;
     width: 50%;
-    height: 50%;
+    height: 35%;
 }
 
 .precio{
@@ -18,21 +18,33 @@
 }
 
 .btnDetalle{
-    padding-left: 10%;
-    padding-right: 10%;
-    font-size: 150%;
+    font-weight: bold;
+    font-size: 100%;
     margin-bottom: 10%;
     margin-right: 3%;
     border-radius: 5%;
+    width: 40%;
+}
+.btnDetalle:hover{
+    box-shadow: cornflowerblue 0px 0px 2px 2px;
+    cursor: pointer;
 }
 
 .btnAgregar{
-    padding-left: 10%;
-    padding-right: 10%;
-    font-size: 150%;
+    font-weight: bold;
+    font-size: 100%;
     margin-bottom: 10%;
     margin-left: 3%;
     border-radius: 5%;
+    width: 50%;
+}
+.btnAgregar:hover{
+    box-shadow: lightgreen 0px 0px 2px 2px;
+    cursor: pointer;
+}
+
+th{
+    font-size: 80%;
 }
 
 select:hover{
@@ -60,4 +72,22 @@ option{
 .botonEE2:hover{
     margin: 1%;
     box-shadow: blue 0px 0px 2px 2px;
+}
+
+.lista{
+    list-style: none;
+    margin-bottom: 2%;
+}
+
+.caja1{
+    width: 45%;
+}
+
+.caja2{
+    width: 45%;
+}
+
+.btnQuitar{
+    box-shadow: black 0px 0px 2px 2px;
+    cursor: pointer;
 }

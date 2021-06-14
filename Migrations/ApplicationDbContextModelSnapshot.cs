@@ -19,6 +19,86 @@ namespace MaxService.Migrations
                 .HasAnnotation("ProductVersion", "5.0.6")
                 .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
 
+            modelBuilder.Entity("MaxService.Models.Listado.Listar", b =>
+                {
+                    b.Property<int>("ListarId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer")
+                        .HasColumnName("ListarId")
+                        .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
+
+                    b.Property<int>("Ancho")
+                        .HasColumnType("integer")
+                        .HasColumnName("Ancho");
+
+                    b.Property<int>("Cantidad")
+                        .HasColumnType("integer")
+                        .HasColumnName("Cantidad");
+
+                    b.Property<string>("Clasificacion")
+                        .IsRequired()
+                        .HasColumnType("text")
+                        .HasColumnName("Clasificacion");
+
+                    b.Property<string>("Construccion")
+                        .IsRequired()
+                        .HasColumnType("text")
+                        .HasColumnName("Construccion");
+
+                    b.Property<int>("Diametro")
+                        .HasColumnType("integer")
+                        .HasColumnName("Diametro");
+
+                    b.Property<string>("FechaFabricacion")
+                        .IsRequired()
+                        .HasColumnType("text")
+                        .HasColumnName("FechaFabricacion");
+
+                    b.Property<int>("IC")
+                        .HasColumnType("integer")
+                        .HasColumnName("IC");
+
+                    b.Property<string>("IV")
+                        .IsRequired()
+                        .HasColumnType("text")
+                        .HasColumnName("IV");
+
+                    b.Property<string>("Marca")
+                        .IsRequired()
+                        .HasColumnType("text")
+                        .HasColumnName("Marca");
+
+                    b.Property<double>("MmCocada")
+                        .HasColumnType("double precision")
+                        .HasColumnName("MmCocada");
+
+                    b.Property<int>("Perfil")
+                        .HasColumnType("integer")
+                        .HasColumnName("Perfil");
+
+                    b.Property<double>("Precio")
+                        .HasColumnType("double precision")
+                        .HasColumnName("Precio");
+
+                    b.Property<string>("PresionMaxima")
+                        .IsRequired()
+                        .HasColumnType("text")
+                        .HasColumnName("PresionMaxima");
+
+                    b.Property<string>("Tipo")
+                        .IsRequired()
+                        .HasColumnType("text")
+                        .HasColumnName("Tipo");
+
+                    b.Property<double>("Total")
+                        .HasColumnType("double precision")
+                        .HasColumnName("Total");
+
+                    b.HasKey("ListarId");
+
+                    b.ToTable("T_Listar");
+                });
+
             modelBuilder.Entity("MaxService.Models.Mantenimiento.Login", b =>
                 {
                     b.Property<int>("Id")

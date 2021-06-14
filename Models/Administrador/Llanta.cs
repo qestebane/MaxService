@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -28,6 +29,10 @@ namespace MaxService_1.Models.Producto
         public int VehiculoId { get; set; }
 
         public virtual DetalleLlanta DetalleLlanta{get; set;}
-        public virtual Vehiculo Vehiculo{get; set;}
+        public virtual Vehiculo  Vehiculo{get; set;}
+
+
+
+    
     }
 }

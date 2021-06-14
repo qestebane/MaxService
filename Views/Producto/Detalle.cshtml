@@ -1,1 +1,63 @@
-<h1 class="display-1 text-center">EN PROCESO</h1>
+
+@model List<MaxService_1.Models.Producto.Llanta>
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="~/css/estilo.css" />
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+    </head>
+
+    <div >
+        <h1 class="text-black display-3 text-center" style="font-weight: bold;">Detalle de la Llanta</h1>
+        <div  class=" d-flex flex-wrap">
+            @foreach (var item in Model)
+            {
+                <div class="caja1 text-center">
+                    <img width="50%" src="@item.DetalleLlanta.FotoLlanta"><br>
+                    <h2><strong>Marca: </strong>@item.DetalleLlanta.NombreMarca</h2>
+                    <h3 ><strong>Precio: </strong>S/ @item.Precio</h3>
+                    <h3 class="stock" ><strong>Stock: </strong>S/ @item.Stock</h3>
+                    <h2><strong>Compatible con: </strong>@item.Vehiculo.TipoVehiculo</h2>
+                    
+                </div>
+
+                <div class="caja2 my-5">
+                    <li class="lista"> <strong>Indice de Carga: </strong>@item.DetalleLlanta.IndiceCarga</li>
+                    <li class="lista"><strong>Indice de Velocidad: </strong>@item.DetalleLlanta.IndiceVelocidad</li>
+                    <li class="lista"><strong>Construccion: </strong>@item.DetalleLlanta.Construccion</li>
+                    <li class="lista"> <strong>Presion Maxima: </strong>@item.DetalleLlanta.PresionMaxima</li>
+                    <li class="lista"><strong>Clasificacion: </strong>@item.DetalleLlanta.Clasificacion</li>
+                    <li class="lista mb-5"><strong>Fecha de Fabricacion: </strong>@item.DetalleLlanta.FechaFabricacion</li>
+                    <table class="table border text-center">
+                        <tr>
+                            <th>Ancho</th>
+                            <th>Diametro</th>
+                            <th>Perfil</th>
+                            <th>Milimetro Cocada</th>
+                            <th>Seleccionar cantidad</th>
+                        </tr>
+                        <tr>
+                            <td>@item.DetalleLlanta.MedidaLlanta.Ancho</td>
+                            <td>@item.DetalleLlanta.MedidaLlanta.Diametro</td>
+                            <td>@item.DetalleLlanta.MedidaLlanta.Perfil</td>
+                            <td>@item.DetalleLlanta.MedidaLlanta.MmCocada</td>
+                            <td> 
+                                <input class="text-center" name="cant" id="CANT" type="number" placeholder="0">  
+                            </td>
+                        </tr>
+                    </table>
+
+
+                    <div class="caja3 d-flex justify-content-between">
+                        <a href="/Producto/Agregar/@item.LlantaId" class="btnDetalle btn btn-success text-white" style="width: 45%;"><span class="fas fa-check-circle"></span> Añadir a la Lista</a>
+                        <a href="/Pantallas/Monitores" class="btnAgregar btn btn-info text-white" style="width: 55%;">Seguir Cargando Productos <span class="fas fa-arrow-alt-circle-right"></span></a>
+                    </div>
+                </div>
+            }
+            
+        </div>
+    </div>
+</html>

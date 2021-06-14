@@ -1,0 +1,64 @@
+@model List<MaxService.Models.Listado.Listar>
+
+<head>
+    <link rel="stylesheet" href="~/css/estilo.css" />
+</head>
+
+<div class="text-center">
+    <table class="table border">
+            <tr>
+                <th>Marca</th>
+                <th>Precio</th>
+                <th>Cantidad</th>
+                <th>Tipo</th>
+                <th>Indice de Carga</th>
+                <th>Indice de Velocidad</th>
+                <th>Construccion</th>
+                <th>Presion Maxima</th>
+                <th>Clasificacion</th>
+                <th>Fecha de Fabricacion</th>
+                <th>Ancho</th>
+                <th>Diametro</th>
+                <th>Perfil</th>
+                <th>Milimetro Cocada</th>
+                <th>Total</th>
+                <th></th>
+            </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Marca</td>
+                <td>@item.Precio</td>
+                <td>@item.Cantidad</td>
+                <td>@item.Tipo</td>
+                <td>@item.IC</td>
+                <td>@item.IV</td>
+                <td>@item.Construccion</td>
+                <td>@item.PresionMaxima</td>
+                <td>@item.Clasificacion</td>
+                <td>@item.FechaFabricacion</td>
+                <td>@item.Ancho</td>
+                <td>@item.Diametro</td>
+                <td>@item.Perfil</td>
+                <td>@item.MmCocada</td>
+                <td>@item.Total</td>
+
+                <td>
+                    <form action="/Producto/Eliminar" method="post" class="d-inline-block">
+                        <input type="hidden" name="id" value="@item.ListarId" />
+                        <button class="btnQuitar btn btn-danger">Quitar</button>
+                    </form>
+                </td>
+            </tr>
+        }
+
+        @if (Model.Count == 0) {
+            <tr>
+                <td colspan="12" class="text-center">
+                    <h3 style="color: blue;" class="m-5"> Lista de productos vacia...</h3>
+                </td>
+            </tr>
+        }
+     </table>
+</div>
