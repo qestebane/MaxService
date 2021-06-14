@@ -9,5 +9,16 @@ namespace MaxService.Controllers
         {
             return new ViewAsPdf("Documento");
         }
+        public IActionResult Documento2()
+        {
+
+            return RedirectToAction("abrirPagina");
+        }
+        public IActionResult abrirPagina()
+        {
+
+            return View();
+        }
+
     }
 }
