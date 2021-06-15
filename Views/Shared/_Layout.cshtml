@@ -1,5 +1,5 @@
 ﻿<!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="position-relative">
 
 <head>
     <meta charset="utf-8" />
@@ -42,7 +42,7 @@
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Producto" asp-action="Lista">Lista de Productos Agregados</a>
+                            <a class="nav-link text-light" asp-area="" asp-controller="Producto" asp-action="Lista">Lista de Productos Agregados</a>
                         </li>
                         
                     </ul>
@@ -60,29 +60,30 @@
             </div>
         </nav>
     </header>
-    <div class="container">
+    <div class="container position-relative">
         <main role="main" class="pb-2">
             @RenderBody()
         </main>
     </div>
 
-    <footer class="border-top footer text-muted">
+    <footer class="border-top footer text-muted position-absolute w-100" id="footer">
         <div class="container">
             <!-- &copy; 2021 - MaxService - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a> -->
         </div>
         <div class="col d-flex justify-content-around px-6">
            <!-- <a class="text-dark" asp-area="" asp-controller="Mantenimiento" asp-action="Index"> Mantenimiento </a>-->
         </div>
-         <footer id="footer">
-    <div class="footer-top">
-      <div class="container" data-aos="fade-up">
-        <div class="row  justify-content-center">
-          <div class="col-lg-6">
-            <h3>llantas en Perú</h3>
-            <p>Dirección: Av.mariscal castilla 1006 mariano melgar </p>
-            <a class="text-dark navbar-brand" asp-area="" asp-controller="Mantenimiento" asp-action="Index"><img src="~/img/Logo_SinFondo.png" title="Mantenimiento" width="190"></a>
-            <p>Todos los derechos reservados, Servimaq S.A.C. 2021</p>
-          </div>
+        <div class="footer-top">
+            <div class="container" data-aos="fade-up"></div>
+                <div class="row  justify-content-center">
+                    <div class="col-lg-6">
+                        <h3>llantas en Perú</h3>
+                        <p>Dirección: Av.mariscal castilla 1006 mariano melgar </p>
+                        <a class="text-dark navbar-brand" asp-area="" asp-controller="Mantenimiento" asp-action="Index"><img src="~/img/Logo_SinFondo.png" title="Mantenimiento" width="190"></a>
+                        <p style="margin-top: 0%;">Todos los derechos reservados, Servimaq S.A.C. 2021</p>
+                    </div>
+                </div>
+            </div>
         </div>
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>

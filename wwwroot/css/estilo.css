@@ -23,7 +23,9 @@
     margin-bottom: 10%;
     margin-right: 3%;
     border-radius: 5%;
-    width: 40%;
+    width: 30%;
+    text-align: center;
+    padding-left: 7%;
 }
 .btnDetalle:hover{
     box-shadow: cornflowerblue 0px 0px 2px 2px;
@@ -36,7 +38,7 @@
     margin-bottom: 10%;
     margin-left: 3%;
     border-radius: 5%;
-    width: 50%;
+    width: 60%;
 }
 .btnAgregar:hover{
     box-shadow: lightgreen 0px 0px 2px 2px;
