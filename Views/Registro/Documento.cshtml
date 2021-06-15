@@ -22,27 +22,26 @@
             <p></p>
             <p></p>
             <p>Nombre y
-                Apellido&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp:
+                Apellido:
                 @item.Nombre @item.Apellido</p>
-            <p>Proveedor&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp:
+
+            <p>Proveedor:
                 ServiMAQ A&C S.A.C.</p>
-            <p>Documento&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp:
+            <p>Documento:
                 @item.Documento</p>
             <p>Fecha de
-                Orden&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp:
+                Orden:
                 @item.FechaActual</p>
-            <p>Correo&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp:
+            <p>Correo:
                 @item.Correo</p>
             <p>Lugar de
-                entrega&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp:
+                entrega:
                 @item.DireccionEntrega</p>
-            <p>Modo de Pago
-                &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp:
+            <p>Modo de Pago:
                 @item.ModoPago</p>
-            <p>Tiempo de Pago
-                &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp:
+            <p>Tiempo de Pago:
                 @item.PlazoPago dias</p>
-            <p>Fecha de Entrega &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp: @item.FechaEntrega</p>
+            <p>Fecha de Entrega: @item.FechaEntrega</p>
 
             <p><br></p>
         </div>
@@ -53,10 +52,14 @@
 
 
     <div style="display: flex;justify-content: center; margin-bottom:35%;">
-        <a type="submit" href='/Registro/Pdf/@ViewData["idd"]' target="_blank"> Generar </a>
+        <a class="nav-link text-dark" type="submit" href='/Registro/Pdf/@ViewData["idd"]' target="_blank"
+            style="background: turquoise;text-decoration: None;display: flex;align-items: center;padding: 0px 10px 0px 10px;">
+            Generar Pdf
+        </a>
         <button class="nav-link text-dark"
-            style="margin-right: 40px;margin-left: 50px;height: auto;background: turquoise;height: -moz-fit-content;">Atras</button>
-        <a class="btn btn-primary" style="background: turquoise;height: -moz-fit-content;"
+            style="margin-right: 40px;margin-left: 50px;height: auto;background: turquoise;height: -moz-fit-content;"
+            onclick="location.href='/Registro/Registrar'">Atras</button>
+        <a class="nav-link text-dark" style="background: turquoise;height: -moz-fit-content;"
             href='/Registro/Ticket/@ViewData["idd"]'>Generar Ticket</a>
     </div>
 

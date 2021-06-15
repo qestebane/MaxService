@@ -1,8 +1,18 @@
 @using MaxService.Models.Cliente
- @model MaxService.Models.Cliente.Registro
+@model MaxService.Models.Cliente.Registro
 
 <h1>Registrar Datos del Comprador </h1>
+<style>
+    input[type="number"] {
+        -moz-appearance: textfield;
+    }
 
+    input[type=number]::-webkit-inner-spin-button,
+    input[type=number]::-webkit-outer-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+</style>
 <form method="post">
 
     @{
@@ -14,53 +24,83 @@
 
     <div class="form-group col-md-6">
         <label asp-for="Nombre">Nombre</label>
-        <input asp-for="Nombre" required class="form-control" type="text" placeholder="Ingresar nombres...">
+        <input asp-for="Nombre" required class="form-control" type="text" placeholder="Ingresar nombres..." style="background: #E0F9F6;
+        border: 2px solid #000000;
+        box-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
+        border-radius: 10px;">
     </div>
 
     <div class="form-group col-md-6">
         <label asp-for="Apellido">Apellido</label>
-        <input asp-for="Apellido" required class="form-control" type="text" placeholder="Ingresar nombres...">
+        <input asp-for="Apellido" required class="form-control" type="text" placeholder="Ingresar nombres..." style="background: #E0F9F6;
+        border: 2px solid #000000;
+        box-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
+        border-radius: 10px;">
     </div>
 
     <div class="form-group col-md-6">
         <label asp-for="Correo">Correo</label>
-        <input asp-for="Correo" required type="email" class="form-control" placeholder="Ingresar Correo...">
+        <input asp-for="Correo" required type="email" class="form-control" placeholder="Ingresar Correo..." style="background: #E0F9F6;
+        border: 2px solid #000000;
+        box-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
+        border-radius: 10px;">
     </div>
 
     <div class="form-group col-md-6">
         <label asp-for="Documento">Documento</label>
-        <input asp-for="Documento" required type="number" class="form-control" placeholder="Ingresar DNI/RUC...">
+        <input asp-for="Documento" required type="number" class="form-control" placeholder="Ingresar DNI/RUC..." style="background: #E0F9F6;
+        border: 2px solid #000000;
+        box-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
+        border-radius: 10px;">
     </div>
 
     <div class="form-group col-md-6">
         <label asp-for="FechaEntrega">Fecha de Entrega</label>
-        <input asp-for="FechaEntrega" required type="date" class="form-control" placeholder="Ingresar fecha de entrega...">
+        <input asp-for="FechaEntrega" required type="date" class="form-control"
+            placeholder="Ingresar fecha de entrega..." style="background: #E0F9F6;
+        border: 2px solid #000000;
+        box-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
+        border-radius: 10px;">
     </div>
 
     <div class="form-group col-md-6">
         <label asp-for="DireccionEntrega">Direccion de entrega</label>
-        <input asp-for="DireccionEntrega" required type="text" class="form-control" placeholder="Ingresar direccion de entrega...">
+        <input asp-for="DireccionEntrega" required type="text" class="form-control"
+            placeholder="Ingresar direccion de entrega..." style="background: #E0F9F6;
+        border: 2px solid #000000;
+        box-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
+        border-radius: 10px;">
     </div>
 
     <div class="form-group col-md-6">
         <label asp-for="ModoPago">Modo de Pago</label>
-        <select asp-for="ModoPago" class="form-control" >
-          <option value="Letras">Letras</option>
-          <option value="Deposito">Deposito</option>
-          <option value="Efectivo">Efectivo</option>
+        <select asp-for="ModoPago" class="form-control" style="background: #E0F9F6;
+        border: 2px solid #000000;
+        box-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
+        border-radius: 10px;">
+            <option value="Letras">Letras</option>
+            <option value="Deposito">Deposito</option>
+            <option value="Efectivo">Efectivo</option>
         </select>
     </div>
 
     <div class="form-group col-md-6">
         <label asp-for="PlazoPago">Plazo</label>
-        <input asp-for="PlazoPago" required type="text" class="form-control" placeholder="Ingresar dias de plazo...">
+        <input asp-for="PlazoPago" required type="text" class="form-control" placeholder="Ingresar dias de plazo..."
+            style="background: #E0F9F6;
+        border: 2px solid #000000;
+        box-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
+        border-radius: 10px;">
     </div>
+
 
     <div class="form-group col-md-6">
         <label asp-for="Adjunto">Adjuntar</label>
-        <input asp-for="Adjunto" required class="form-control" type="text">
+        <input asp-for="Adjunto" required class="form-control" type="text" style="background: #E0F9F6;
+        border: 2px solid #000000;
+        box-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
+        border-radius: 10px;">
     </div>
 
     <button class="btn btn-primary">Siguiente</button>
 </form>
-

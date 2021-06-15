@@ -1,111 +1,107 @@
-
-
-.cajaP{
-    width: 30%;
-    height: auto;
-    border: 2px rgb(207, 197, 197) solid;
-    margin: 1%;
+.cajaP {
+  width: 30%;
+  height: auto;
+  border: 2px rgb(207, 197, 197) solid;
+  margin: 1%;
 }
 
-.imagenP{
-    margin-top: 0%;
-    width: 50%;
-    height: 35%;
+.imagenP {
+  margin-top: 0%;
+  width: 50%;
+  height: 35%;
 }
 
-.precio{
-    margin-bottom: 10%;
+.precio {
+  margin-bottom: 10%;
 }
 
-.btnDetalle{
-    font-weight: bold;
-    font-size: 100%;
-    margin-bottom: 10%;
-    margin-right: 3%;
-    border-radius: 5%;
-    width: 30%;
-    text-align: center;
-    padding-left: 7%;
+.btnDetalle {
+  font-weight: bold;
+  font-size: 100%;
+  margin-bottom: 10%;
+  margin-right: 3%;
+  border-radius: 5%;
+  width: 30%;
+  text-align: center;
+  padding-left: 7%;
 }
-.btnDetalle:hover{
-    box-shadow: cornflowerblue 0px 0px 2px 2px;
-    cursor: pointer;
-}
-
-.btnAgregar{
-    font-weight: bold;
-    font-size: 100%;
-    margin-bottom: 10%;
-    margin-left: 3%;
-    border-radius: 5%;
-    width: 60%;
-}
-.btnAgregar:hover{
-    box-shadow: lightgreen 0px 0px 2px 2px;
-    cursor: pointer;
+.btnDetalle:hover {
+  box-shadow: cornflowerblue 0px 0px 2px 2px;
+  cursor: pointer;
 }
 
-th{
-    font-size: 80%;
+.btnAgregar {
+  font-weight: bold;
+  font-size: 100%;
+  margin-bottom: 10%;
+  margin-left: 3%;
+  border-radius: 5%;
+  width: 60%;
+}
+.btnAgregar:hover {
+  box-shadow: lightgreen 0px 0px 2px 2px;
+  cursor: pointer;
 }
 
-select:hover{
-    box-shadow: blue 0px 0px 2px 2px;
+th {
+  font-size: 80%;
 }
 
-option{
-    background-color: whitesmoke;
+select:hover {
+  box-shadow: blue 0px 0px 2px 2px;
 }
 
-.botonEE{
-    cursor: pointer;
-    margin: 5%;
+option {
+  background-color: whitesmoke;
 }
 
-.botonEE:hover{
-    margin: 3%;
-    box-shadow: blue 0px 0px 2px 2px;
+.botonEE {
+  cursor: pointer;
+  margin: 5%;
 }
 
-.botonEE2{
-    cursor: pointer;
+.botonEE:hover {
+  margin: 3%;
+  box-shadow: blue 0px 0px 2px 2px;
 }
 
-.botonEE2:hover{
-    margin: 1%;
-    box-shadow: blue 0px 0px 2px 2px;
+.botonEE2 {
+  cursor: pointer;
 }
 
-.lista{
-    list-style: none;
-    margin-bottom: 2%;
+.botonEE2:hover {
+  margin: 1%;
+  box-shadow: blue 0px 0px 2px 2px;
 }
 
-.caja1{
-    width: 45%;
+.lista {
+  list-style: none;
+  margin-bottom: 2%;
 }
 
-.caja2{
-    width: 45%;
+.caja1 {
+  width: 45%;
 }
 
-.btnQuitar{
-    box-shadow: black 0px 0px 2px 2px;
-    cursor: pointer;
+.caja2 {
+  width: 45%;
 }
 
-.RUC{
-    visibility: visible;
+.btnQuitar {
+  box-shadow: black 0px 0px 2px 2px;
+  cursor: pointer;
 }
 
-#opcion input:checked{
-    box-shadow: blue 0px 0px 2px 2px;
-    display: block;
+.RUC {
+  visibility: visible;
 }
 
-#opcion input.DNI:checked{
-    box-shadow: blue 0px 0px 2px 2px;
-    display: none;
+#opcion input:checked {
+  box-shadow: blue 0px 0px 2px 2px;
+  display: block;
 }
 
-
+#opcion input.DNI:checked {
+  box-shadow: blue 0px 0px 2px 2px;
+  display: none;
+}
