@@ -3,7 +3,6 @@ using System.Linq;
 using MaxService.Models.Cliente;
 using Microsoft.AspNetCore.Mvc;
 using MonoGamingStore.Data;
-using Rotativa.AspNetCore;
 
 namespace MaxService.Controllers
 {
@@ -22,13 +21,12 @@ namespace MaxService.Controllers
             return View(doc);
         }
 
-        public IActionResult Registro(){
+        public IActionResult Registrar(){
             return View();
         }
 
         [HttpPost]
-        public IActionResult Registro(Registro r){
-            r.FechaActual = DateTime.Now.ToString();
+        public IActionResult Registrar(Registro r){
             if(ModelState.IsValid){
                 _context.Add(r);
                 _context.SaveChanges();

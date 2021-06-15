@@ -1,37 +1,45 @@
+@using MaxService.Models.Cliente
  @model MaxService.Models.Cliente.Registro
 
 <h1>Registrar Datos del Comprador </h1>
 
-<form action="" method="post">
+<form method="post">
+
+    @{
+        Registro r = new Registro();
+        r.FechaActual = DateTime.Now.ToString();
+    }
+
+    <input asp-for="FechaActual" type="text" hidden value="@r.FechaActual">
 
     <div class="form-group col-md-6">
         <label asp-for="Nombre">Nombre</label>
-        <input asp-for="Nombre" class="form-control" type="text" placeholder="Ingresar nombres...">
+        <input asp-for="Nombre" required class="form-control" type="text" placeholder="Ingresar nombres...">
     </div>
 
     <div class="form-group col-md-6">
         <label asp-for="Apellido">Apellido</label>
-        <input asp-for="Apellido" class="form-control" type="text" placeholder="Ingresar nombres...">
+        <input asp-for="Apellido" required class="form-control" type="text" placeholder="Ingresar nombres...">
     </div>
 
     <div class="form-group col-md-6">
         <label asp-for="Correo">Correo</label>
-        <input asp-for="Correo" type="email" class="form-control" placeholder="Ingresar Correo...">
+        <input asp-for="Correo" required type="email" class="form-control" placeholder="Ingresar Correo...">
     </div>
 
     <div class="form-group col-md-6">
         <label asp-for="Documento">Documento</label>
-        <input asp-for="Documento" type="number" class="form-control" placeholder="Ingresar DNI/RUC...">
+        <input asp-for="Documento" required type="number" class="form-control" placeholder="Ingresar DNI/RUC...">
     </div>
 
     <div class="form-group col-md-6">
         <label asp-for="FechaEntrega">Fecha de Entrega</label>
-        <input asp-for="FechaEntrega" type="date" class="form-control" placeholder="Ingresar fecha de entrega...">
+        <input asp-for="FechaEntrega" required type="date" class="form-control" placeholder="Ingresar fecha de entrega...">
     </div>
 
     <div class="form-group col-md-6">
         <label asp-for="DireccionEntrega">Direccion de entrega</label>
-        <input asp-for="DireccionEntrega" class="form-control" placeholder="Ingresar direccion de entrega...">
+        <input asp-for="DireccionEntrega" required type="text" class="form-control" placeholder="Ingresar direccion de entrega...">
     </div>
 
     <div class="form-group col-md-6">
@@ -45,12 +53,12 @@
 
     <div class="form-group col-md-6">
         <label asp-for="PlazoPago">Plazo</label>
-        <input asp-for="PlazoPago" class="form-control" placeholder="Ingresar dias de plazo...">
+        <input asp-for="PlazoPago" required type="text" class="form-control" placeholder="Ingresar dias de plazo...">
     </div>
 
     <div class="form-group col-md-6">
         <label asp-for="Adjunto">Adjuntar</label>
-        <input asp-for="Adjunto" class="form-control" type="file">
+        <input asp-for="Adjunto" required class="form-control" type="text">
     </div>
 
     <button class="btn btn-primary">Siguiente</button>
