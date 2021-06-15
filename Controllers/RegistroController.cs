@@ -14,9 +14,9 @@ namespace MaxService.Controllers
             _context = context;
         }
 
-        public IActionResult Documento()
+        public IActionResult Documento(int id)
         {
-            var doc = _context.DataRegistro.OrderBy(x => x.RegistroId).ToList();
+            var doc = _context.DataRegistro.OrderBy(x => x.RegistroId).Where(x => x.RegistroId == id).ToList();
             //return new ViewAsPdf("Documento");
             return View(doc);
         }
@@ -27,10 +27,11 @@ namespace MaxService.Controllers
 
         [HttpPost]
         public IActionResult Registrar(Registro r){
+
             if(ModelState.IsValid){
                 _context.Add(r);
                 _context.SaveChanges();
-                return RedirectToAction("Documento");
+                return RedirectToAction("Documento",new { id = r.RegistroId});
             }
             return View(r);
         }
