@@ -13,34 +13,46 @@
                     <span class="navbar-toggler-icon"></span>
                 </button> *@
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Administrador" asp-action="MarcaVehiculo">Marcas de Vehiculos</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Administrador" asp-action="Vehiculo">Vehiculos</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Administrador" asp-action="MedidaLlanta">Medidas de Llantas</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Administrador" asp-action="DetalleLlanta">Detalle de las Llantas</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Administrador" asp-action="Llanta">Llantas</a>
-                        </li>
+                    <ul class="navbar-nav flex-grow-1 justify-content-between">
+                        <div class="d-flex ">
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Administrador" asp-action="MarcaVehiculo">Marcas de Vehiculos</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Administrador" asp-action="Vehiculo">Vehiculos</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Administrador" asp-action="MedidaLlanta">Medidas de Llantas</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Administrador" asp-action="DetalleLlanta">Detalle de las Llantas</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Administrador" asp-action="Llanta">Llantas</a>
+                            </li>
+                        </div>
+                        
+
+                        <div class="d-flex ">
+                            <li class="nav-item">
+                                <p class="nav-link text-center font-weight-bold text-dark" style="margin-bottom: 0%;">Hola, bienvenido Adminisrador</p> 
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-center font-weight-bold text-danger" style="margin-bottom: 0%;" asp-controller="Home" asp-action="Index">Salir</a> 
+                            </li>
+                        </div>
                     </ul>
                 </div>
             </div>
         </nav>
     </header>
 <div class="text-center container row-1 my-4">
-    <h1 class="text-dark" style="margin-bottom: 5%;">Lista de Marcas</h1>
+    <h1 class="text-dark" style="margin-bottom: 5%;">Lista de Marcas de Vehiculos</h1>
 </div>
 
 <a href="/Administrador/RegistrarMarcaVehiculo" class="btn btn-primary">Añadir Marca Nueva</a>
 
-<table class="text-center table">
+<table class="text-center table" style="margin-bottom: 15%;">
     <tr>
         <th>Id</th>
         <th>Nombre de la marca</th>
