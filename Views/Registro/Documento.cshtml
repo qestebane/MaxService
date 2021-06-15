@@ -5,7 +5,7 @@
     <link rel="stylesheet" href="~/css/site.css" />
 </head>
 
-<body class="col-12 d-flex flex-wrap">
+<body class="w-auto d-flex flex-wrap">
     <h1 >Orden De Compra</h1>
 
     @foreach (var item in Model)
@@ -29,32 +29,8 @@
             <p>Fecha de Entrega &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp: @item.FechaEntrega</p>
 
             <p><br></p>
-            <table class="table border">
-                <tr>
-                    <th>Tipo de llanta</th>
-                    <th>Marca</th>
-                    <th>Cantidad</th>
-                    <th>Precio</th>
-                </tr>
-                <tr>
-                    <td>Llanta de jebe</td>
-                    <td>Dumblop</td>
-                    <td >10</td>
-                    <td>10.000 S/.</td>
-                </tr>
-                <tr>
-                    <td>Llanta de jebe</td>
-                    <td>Continent.</td>
-                    <td>4</td>
-                    <td>4.000 S/.</td>
-                </tr>
-                <tr>
-                    <td>Llanta de jebe</td>
-                    <td>Pierelli</td>
-                    <td>1</td>
-                    <td>1.000 S/.</td>
-                </tr>
-            </div>
+        </div>
     }
-    
+    <iframe scrolling="no" src="/Producto/Lista2" width="100%" style="position: relative; height: 500px; margin-bottom: ;"  ></iframe>
+
 </body>

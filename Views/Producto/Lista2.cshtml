@@ -1,12 +1,16 @@
+@{
+    Layout = null;
+}
+
 @model List<MaxService.Models.Listado.Listar>
 
 <head>
     <link rel="stylesheet" href="~/css/estilo.css" />
+    <link rel="stylesheet" href="~/css/TablasEstilos.css" />
 </head>
 
-<div class="text-center" style="margin-bottom: 25%; margin-left: -6%;">
-    <h1 class="mt-5 mb-5">Lista de Productos Elegidos</h1>
-    <table class="TDatos table border " >
+<div class="text-center" style="margin-bottom: 25%; ">
+    <table class="table border" >
             <tr>
                 <th>Marca</th>
                 <th>Precio</th>
@@ -23,7 +27,6 @@
                 <th>Perfil</th>
                 <th>Milimetro Cocada</th>
                 <th>Total</th>
-                <th></th>
             </tr>
 
         @foreach (var item in Model)
@@ -44,22 +47,8 @@
                 <td>@item.Perfil</td>
                 <td>@item.MmCocada</td>
                 <td>@item.Total</td>
-
-                <td>
-                    <form action="/Producto/Eliminar" method="post" class="d-inline-block">
-                        <input type="hidden" name="id" value="@item.ListarId" />
-                        <button class="btnQuitar btn btn-danger">Quitar</button>
-                    </form>
-                </td>
             </tr>
         }
 
-        @if (Model.Count == 0) {
-            <tr>
-                <td colspan="12" class="text-center">
-                    <h3 style="color: blue;" class="m-5"> Lista de productos vacia...</h3>
-                </td>
-            </tr>
-        }
      </table>
 </div>

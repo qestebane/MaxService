@@ -64,6 +64,11 @@ namespace MaxService_1.Controllers
             return View(listar);
         }
 
+        public IActionResult Lista2(){
+            var listar = _context.DataLista.OrderBy(l => l.ListarId).ToList();
+            return View(listar);
+        }
+
         public IActionResult Eliminar(int id){
             var quitar = _context.DataLista.Find(id);
             _context.Remove(quitar);
