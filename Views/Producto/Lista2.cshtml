@@ -10,24 +10,19 @@
 </head>
 
 <div class="text-center" style="margin-bottom: 25%; ">
-    <table class="table border" >
-            <tr>
-                <th>Marca</th>
-                <th>Precio</th>
-                <th>Cantidad</th>
-                <th>Tipo</th>
-                <th>Indice de Carga</th>
-                <th>Indice de Velocidad</th>
-                <th>Construccion</th>
-                <th>Presion Maxima</th>
-                <th>Clasificacion</th>
-                <th>Fecha de Fabricacion</th>
-                <th>Ancho</th>
-                <th>Diametro</th>
-                <th>Perfil</th>
-                <th>Milimetro Cocada</th>
-                <th>Total</th>
-            </tr>
+    <table class="table border">
+        <tr>
+            <th>Marca</th>
+            <th>Precio</th>
+            <th>Cantidad</th>
+            <th>Construccion</th>
+            <th>Fecha de Fabricacion</th>
+            <th>Ancho</th>
+            <th>Diametro</th>
+            <th>Perfil</th>
+            <th>Milimetro Cocada</th>
+            <th>Total</th>
+        </tr>
 
         @foreach (var item in Model)
         {
@@ -35,12 +30,7 @@
                 <td>@item.Marca</td>
                 <td>@item.Precio</td>
                 <td>@item.Cantidad</td>
-                <td>@item.Tipo</td>
-                <td>@item.IC</td>
-                <td>@item.IV</td>
                 <td>@item.Construccion</td>
-                <td>@item.PresionMaxima</td>
-                <td>@item.Clasificacion</td>
                 <td>@item.FechaFabricacion</td>
                 <td>@item.Ancho</td>
                 <td>@item.Diametro</td>
@@ -50,5 +40,5 @@
             </tr>
         }
 
-     </table>
+    </table>
 </div>
