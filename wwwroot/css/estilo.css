@@ -1,3 +1,4 @@
+
 .cajaP {
   width: 30%;
   height: auto;
@@ -61,7 +62,6 @@ option {
 }
 
 .botonEE:hover {
-  margin: 3%;
   box-shadow: blue 0px 0px 2px 2px;
 }
 
@@ -70,7 +70,6 @@ option {
 }
 
 .botonEE2:hover {
-  margin: 1%;
   box-shadow: blue 0px 0px 2px 2px;
 }
 
@@ -92,16 +91,42 @@ option {
   cursor: pointer;
 }
 
-.RUC {
-  visibility: visible;
+.Barra{
+  box-shadow: black 0px 0px 2px 2px;
+  font-weight: bold;
+  width: 70%;
+  height: 100%;
 }
 
-#opcion input:checked {
-  box-shadow: blue 0px 0px 2px 2px;
-  display: block;
+.Barra li{
+  margin: 0px;
+  padding: 0px;
 }
 
-#opcion input.DNI:checked {
-  box-shadow: blue 0px 0px 2px 2px;
-  display: none;
+.Item{
+  height: 100%;
+  text-align: center;
+  background-size: cover;
+  justify-content: center;
 }
+
+.Barra li:hover{
+  background-color: rgb(199, 202, 201);
+  color: whitesmoke;
+  cursor: pointer;
+}
+
+.Barra li a.nav-link {
+  display: table-row;
+
+}
+
+.Barra li a.nav-link:hover {
+  text-shadow: white 0px 0px 2px;
+  
+ }  
+
+ label{
+   font-weight: bold;
+   font-size: 130%;
+ }

@@ -1,6 +1,12 @@
 @model MaxService_1.Models.Producto.Llanta
 
-<form class="text-dark" action="" method="post">
+<head>
+	<link rel="stylesheet" href="~/css/estilo.css">
+</head>
+
+<h1>Registro de Llantas</h1>
+
+<form class="text-dark" action="" method="post" style="margin-bottom: 25%;">
     <div class="form-group">
         <label asp-for="Precio">Precio</label>
         <input asp-for="Precio" required class="form-control" placeholder="ingresar Precio de la llanta...">

@@ -4,48 +4,48 @@
     <link rel="stylesheet" href="~/css/estilo.css">
 </head>
 
-<header>
-        <nav class="navbar navbar-expand-sm  bg-white border-bottom mb-3">
-            <div class="container">
-                @* <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">MaxService</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button> *@
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1 justify-content-between">
-                        <div class="d-flex ">
-                            <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Administrador" asp-action="MarcaVehiculo">Marcas de Vehiculos</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Administrador" asp-action="Vehiculo">Vehiculos</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Administrador" asp-action="MedidaLlanta">Medidas de Llantas</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Administrador" asp-action="DetalleLlanta">Detalle de las Llantas</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Administrador" asp-action="Llanta">Llantas</a>
-                            </li>
-                        </div>
+<header class="position-static">
+    <nav class="navbar navbar-expand  bg-white border-bottom mb-3">
+        <div class="container ">
+            @* <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">MaxService</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button> *@
+            <div class="navbar-collapse collapse ">
+                <ul class="navbar-nav  justify-content-between">
+                    <div class="Barra d-flex " >
+                        <li class="nav-item col-3 ">
+                            <a class="Item nav-link text-dark" asp-area="" asp-controller="Administrador" asp-action="MarcaVehiculo">Marcas de Vehiculos</a>
+                        </li>
+                        <li class=" nav-item col-2" style="padding-left: 2.5%; padding-top: 1.5%;">
+                            <a class="Item nav-link text-dark" asp-area="" asp-controller="Administrador" asp-action="Vehiculo">Vehiculos</a>
+                        </li>
+                        <li class=" nav-item col-2">
+                            <a class="Item nav-link text-dark" asp-area="" asp-controller="Administrador" asp-action="MedidaLlanta">Medidas de Llantas</a>
+                        </li>
+                        <li class=" nav-item col-3">
+                            <a class="Item nav-link text-dark" asp-area="" asp-controller="Administrador" asp-action="DetalleLlanta">Detalle de las Llantas</a>
+                        </li>
+                        <li class=" nav-item col-2 " style="padding-left: 4%; padding-top: 1.5%;">
+                            <a class="Item nav-link text-dark"  asp-area="" asp-controller="Administrador" asp-action="Llanta">Llantas</a>
+                        </li>
+                    </div>
                         
 
-                        <div class="d-flex ">
-                            <li class="nav-item">
-                                <p class="nav-link text-center font-weight-bold text-dark" style="margin-bottom: 0%;">Hola, bienvenido Adminisrador</p> 
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link text-center font-weight-bold text-danger" style="margin-bottom: 0%;" asp-controller="Home" asp-action="Index">Salir</a> 
-                            </li>
-                        </div>
-                    </ul>
-                </div>
+                    <div class="d-flex " style="width: 25%;">
+                        <li class="nav-item">
+                            <p class="text-center font-weight-bold text-dark" style="margin-bottom: 0%;">Hola, bienvenido Adminisrador</p> 
+                        </li>
+                        <li class="nav-item">
+                            <a class=" text-center font-weight-bold text-danger" style="margin-bottom: 0%;" asp-controller="Home" asp-action="Index">Salir</a> 
+                        </li>
+                    </div>
+                </ul>
             </div>
-        </nav>
-    </header>
+        </div>
+    </nav>
+</header>
 <div class="text-center container row-1 my-4">
     <h1 class="text-dark" style="margin-bottom: 5%;">Lista de Marcas de Vehiculos</h1>
 </div>
