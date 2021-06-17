@@ -3,7 +3,7 @@
     <h1 class="text-center text-dark px-3" style="margin-top: 10%;">Login</h1>
 </div>
 
-<form asp-controller="Administrador" asp-action="MarcaVehiculo" style="margin-left: 36%;">
+<form style="margin-left: 36%;" method="POST">
     <div class="container">
         <label asp-for="Email" class="control-label font-weight-bold"></label>
         <input asp-for="Email" class="form-control col-5" placeholder="ingresar correo..." style="background: #E0F9F6;
@@ -20,6 +20,8 @@
     </div>
 
     <div class="container my-2">
-        <button type="submit" class="btn btn-info text-center font-weight-bold mt-2 col-3" style=" margin-bottom: 10%; box-shadow: darkturquoise 0px 0px 2px 2px;">&nbsp;Entrar &nbsp;&nbsp; <img src="~/img/Login.png" alt="LOGO" width="30"> </button> 
+        <button class="btn btn-info text-center font-weight-bold mt-2 col-3" style=" margin-bottom: 10%; box-shadow: darkturquoise 0px 0px 2px 2px;">&nbsp;Entrar &nbsp;&nbsp; <img src="~/img/Login.png" alt="LOGO" width="30"> </button> 
     </div>           
 </form>
+
+<p class="text-danger">@ViewData["mensaje"] </p>

@@ -5,6 +5,7 @@
 <head>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="~/css/EstilosCliente.css" />
 </head>
 
 <body class="w-auto d-flex flex-wrap">
@@ -13,8 +14,8 @@
 
     @foreach (var item in Model)
     {
-        <div class="titulo">
-            <img style="border-radius: 150px;width: 50px;height: 50px; " src="@item.Adjunto">
+        <div class="titulo text-center">
+            <img style="border-radius: 150px;width: 10%;height: 10%;" src="~/img/logos/fino.png">
         </div>
 
         <div class="row-6">
@@ -45,23 +46,23 @@
 
             <p><br></p>
         </div>
-    }
+    
 
     <iframe scrolling="no" src="/Producto/Lista2" width="100%"
-        style="position: relative; height: 500px; height: -moz-fit-content; border: none;"></iframe>
+        style="position: relative; height: -moz-fit-content; border: none;"></iframe>
 
 
     <div style="display: flex;justify-content: center; margin-bottom:35%;">
-        <a class="nav-link text-dark" type="submit" href='/Registro/Pdf/@ViewData["idd"]' target="_blank"
+        <a class="Cliente nav-link text-dark" type="submit" href='/Registro/Pdf/@ViewData["idd"]' target="_blank"
             style="background: turquoise;text-decoration: None;display: flex;align-items: center;padding: 0px 10px 0px 10px;">
             Generar Pdf
         </a>
-        <button class="nav-link text-dark"
+        <button class="Cliente nav-link text-dark"
             style="margin-right: 40px;margin-left: 50px;height: auto;background: turquoise;height: -moz-fit-content;"
-            onclick="location.href='/Registro/Registrar'">Atras</button>
-        <a class="nav-link text-dark" style="background: turquoise;height: -moz-fit-content;"
+            onclick="location.href='/Registro/Modificar/@item.RegistroId'">Atras</button>
+        <a class="Cliente nav-link text-dark" style="background: turquoise;height: -moz-fit-content;"
             href='/Registro/Ticket/@ViewData["idd"]'>Generar Ticket</a>
     </div>
-
+    }
 
 </body>

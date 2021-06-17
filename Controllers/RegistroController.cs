@@ -36,7 +36,6 @@ namespace MaxService.Controllers
         {
             return View();
         }
-
         [HttpPost]
         public IActionResult Registrar(Registro r)
         {
@@ -50,10 +49,45 @@ namespace MaxService.Controllers
             return View(r);
         }
 
+        public IActionResult Modificar(int id)
+        {
+            var modificar = _context.DataRegistro.Find(id);
+            return View(modificar);
+        }
+
+        [HttpPost]
+        public IActionResult Modificar(Registro r)
+        {
+            if (ModelState.IsValid) {
+                var cliente = _context.DataRegistro.Find(r.RegistroId);
+                cliente.Nombre = r.Nombre;
+                cliente.Apellido = r.Apellido;
+                cliente.Correo = r.Correo;
+                cliente.Documento = r.Documento;
+                cliente.Apellido = r.Apellido;
+                cliente.FechaActual = DateTime.Now.ToString();
+                cliente.FechaEntrega = r.FechaEntrega;
+                cliente.DireccionEntrega = r.DireccionEntrega;
+                cliente.ModoPago = r.ModoPago;
+                cliente.PlazoPago = r.PlazoPago;
+                cliente.Adjunto = r.Adjunto;
+
+                _context.SaveChanges();
+                return RedirectToAction("Documento", new { id = r.RegistroId });
+            }
+            return View(r);
+        }
+
+        
+
         public IActionResult Ticket(int id)
         {
             var doc = _context.DataRegistro.OrderBy(x => x.RegistroId).Where(x => x.RegistroId == id).ToList();
             return View(doc);
+        }
+
+        public IActionResult Cancelar(){
+            return View();
         }
 
     }
