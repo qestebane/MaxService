@@ -87,7 +87,15 @@ namespace MaxService.Controllers
         }
 
         public IActionResult Cancelar(){
-            return View();
+            var datos = _context.DataLista.ToList();
+            foreach (var item in datos)
+            {
+                var dato = _context.DataLista.Find(item.ListarId);
+                _context.Remove(dato);
+                
+            }
+            _context.SaveChanges();
+            return Redirect("/Producto/Catalogo");
         }
 
     }

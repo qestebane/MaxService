@@ -4,7 +4,7 @@
 
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
-
+    <link rel="stylesheet" href="~/css/EstilosCliente.css" />
 </head>
 
 <body>
@@ -42,10 +42,24 @@
                         </div>
 
                         <div style="display: flex;justify-content: center;">
-                            <a class="btn btn-info" style="margin-bottom:10%;" margin-left: 15px;">Cancelar
+                            <a class="btn btn-info" href="#openModal" style="margin-bottom:10%;" margin-left: 15px;">Cancelar
                                 Orden</a>
                             <button class="btn btn-success " style="margin-left: 15px; margin-bottom:10%;">Finalizar y
                                 Enviar</button>
+                        </div>
+
+                        <!--MODAL DE CANCELACION-->
+                        <div id="openModal" class="modalDialog">
+                            <div>
+                                <a href="#close" title="Close" class="close">X</a>
+                                <h2>¿Estas seguro que quieres cancelar el proceso?</h2>
+                                <div>
+                                    <a href="#close" title="Close" class=" btn btn-outline-info">No</a>
+                                    <a href="/Registro/Cancelar" class="btn btn-outline-danger">Si</a>
+                                </div>
+                                
+
+                            </div>
                         </div>
 
                     </span>
