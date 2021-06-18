@@ -98,5 +98,17 @@ namespace MaxService.Controllers
             return Redirect("/Producto/Catalogo");
         }
 
+        public IActionResult Aceptar(){
+            var datos = _context.DataLista.ToList();
+            foreach (var item in datos)
+            {
+                var dato = _context.DataLista.Find(item.ListarId);
+                _context.Remove(dato);
+                
+            }
+            _context.SaveChanges();
+            return Redirect("/Producto/Catalogo");
+        }
+
     }
 }

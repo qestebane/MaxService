@@ -44,8 +44,7 @@
                         <div style="display: flex;justify-content: center;">
                             <a class="btn btn-info" href="#openModal" style="margin-bottom:10%;" margin-left: 15px;">Cancelar
                                 Orden</a>
-                            <button class="btn btn-success " style="margin-left: 15px; margin-bottom:10%;">Finalizar y
-                                Enviar</button>
+                            <a class="btn btn-success" href="#openModal2" style="margin-left: 15px; margin-bottom:10%;">Finalizar y Enviar</a>
                         </div>
 
                         <!--MODAL DE CANCELACION-->
@@ -57,8 +56,14 @@
                                     <a href="#close" title="Close" class=" btn btn-outline-info">No</a>
                                     <a href="/Registro/Cancelar" class="btn btn-outline-danger">Si</a>
                                 </div>
-                                
+                            </div>
+                        </div>
 
+                        <!--MODAL DE Confirmacion-->
+                        <div id="openModal2" class="modalDialog2">
+                            <div>
+                                <h2 style="color: green; text-shadow: white 2px 2px;">Solicitud Procesada con exito</h2>
+                                <a href="/Registro/Aceptar" class="btn btn-outline-success">Aceptar</a>
                             </div>
                         </div>
 
